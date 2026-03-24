@@ -15,6 +15,7 @@ export default function TopBar() {
   const [isDark, setIsDark] = useState(false);
   const [language, setLanguage] = useState("en");
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     // Check for saved preference or system preference
@@ -30,6 +31,17 @@ export default function TopBar() {
     if (savedLang) {
       setLanguage(savedLang);
     }
+
+    // Scroll progress handler
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleDarkMode = () => {
@@ -53,6 +65,13 @@ export default function TopBar() {
 
   return (
     <div className="top-bar">
+      {/* Scroll Progress Bar */}
+      <div className="scroll-progress-bar">
+        <div 
+          className="scroll-progress-fill"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
       <div className="top-bar-content shell">
         <span className="top-bar-tagline">{translations[language].tagline}</span>
         
