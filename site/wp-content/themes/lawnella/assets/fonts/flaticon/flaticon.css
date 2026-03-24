@@ -1,0 +1,43 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 21/04/2020 06:25
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.eot");
+  src: url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.eot") format("embedded-opentype"),
+       url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.woff2") format("woff2"),
+       url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.woff") format("woff"),
+       url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.ttf") format("truetype"),
+       url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./wp-content/themes/lawnella/assets/fonts/flaticon/Flaticon.svg") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+     
+font-style: normal;
+
+}
+
+.flaticon-contact:before { content: "\f100"; }
+.flaticon-marker:before { content: "\f101"; }
+.flaticon-null:before { content: "\f102"; }
+.flaticon-address:before { content: "\f103"; }
+.flaticon-fast:before { content: "\f104"; }
+.flaticon-clock:before { content: "\f105"; }
+.flaticon-clock-1:before { content: "\f106"; }
+.flaticon-real-estate:before { content: "\f107"; }
+.flaticon-email:before { content: "\f108"; }
+.flaticon-sent:before { content: "\f109"; }
+.flaticon-customer-review:before { content: "\f10a"; }
