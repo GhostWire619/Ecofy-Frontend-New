@@ -14,6 +14,7 @@ import {
   testimonials,
 } from "@/lib/site-data";
 import Header from "@/components/layout/Header";
+import TopBar from "@/components/layout/TopBar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import ServiceGrid from "@/components/sections/ServiceGrid";
@@ -29,6 +30,7 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function HomePage() {
   return (
     <main className="page-shell">
+      <TopBar />
       <Header navigation={navigation} />
       <Hero slides={heroSlides} />
       <PartnersSection partners={partners} />
