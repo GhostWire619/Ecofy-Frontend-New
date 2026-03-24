@@ -21,11 +21,8 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if section is in view
       if (rect.top < windowHeight && rect.bottom > 0) {
         setIsInView(true);
-
-        // Calculate scroll progress within the section
         const sectionTop = rect.top;
         const sectionHeight = rect.height;
         const progress = Math.max(
@@ -42,7 +39,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -63,13 +60,13 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
             transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
             Platform suite
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1f2a1f] dark:text-white">
             A modern operating stack for agriculture and rural commerce
           </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
             Each module can run standalone or as part of one coordinated product
             ecosystem. The redesign emphasizes system thinking instead of
             isolated service tiles.
@@ -80,7 +77,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8">
           {/* Feature Card with parallax effect */}
           <article
-            className="backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-6"
+            className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-8 flex flex-col justify-between gap-6"
             style={{
               opacity: isInView ? 1 : 0,
               transform: `translateX(${isInView ? 0 : -60}px) translateY(${scrollProgress * -20}px)`,
@@ -88,16 +85,16 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                 "opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease-out",
             }}
           >
-            <span className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+            <span className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
               Spotlight module
             </span>
-            <h3 className="text-2xl font-bold">{highlight.title}</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <h3 className="text-2xl font-bold text-[#1f2a1f] dark:text-white">{highlight.title}</h3>
+            <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
               {highlight.description}
             </p>
             <a
               href={highlight.href}
-              className="text-sm font-medium hover:underline"
+              className="text-sm font-medium text-[#1f2a1f] dark:text-white hover:underline"
             >
               Open module &rarr;
             </a>
@@ -108,7 +105,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
             {rest.map((service, index) => (
               <article
                 key={service.title}
-                className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 flex flex-col gap-3 transition-transform hover:-translate-y-1"
+                className="rounded-2xl border border-[#1f2a1f]/10 dark:border-zinc-800 p-6 flex flex-col gap-3 transition-transform hover:-translate-y-1"
                 style={{
                   opacity: isInView ? 1 : 0,
                   transform: `
@@ -119,16 +116,16 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   transition: `opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) ${index * 100}ms, transform 0.3s ease-out`,
                 }}
               >
-                <span className="text-xs font-bold text-zinc-300 dark:text-zinc-600">
+                <span className="text-xs font-bold text-[#c48738]/50 dark:text-zinc-600">
                   0{index + 2}
                 </span>
-                <h3 className="text-lg font-semibold">{service.title}</h3>
-                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <h3 className="text-lg font-semibold text-[#1f2a1f] dark:text-white">{service.title}</h3>
+                <p className="text-sm text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
                   {service.description}
                 </p>
                 <a
                   href={service.href}
-                  className="text-sm font-medium hover:underline mt-auto"
+                  className="text-sm font-medium text-[#1f2a1f] dark:text-white hover:underline mt-auto"
                 >
                   Details &rarr;
                 </a>
@@ -139,7 +136,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
 
         {/* Ticker with scroll-based movement */}
         <div
-          className="flex gap-8 mt-16 overflow-hidden text-2xl font-bold text-zinc-200 dark:text-zinc-800 whitespace-nowrap select-none"
+          className="flex gap-8 mt-16 overflow-hidden text-2xl font-bold text-[#c48738]/20 dark:text-zinc-800 whitespace-nowrap select-none"
           aria-label="Service highlights"
           style={{
             opacity: isInView ? 1 : 0,

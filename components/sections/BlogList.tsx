@@ -29,8 +29,8 @@ export default function BlogList({ posts, categories }: BlogListProps) {
                 onClick={() => setActiveCategory(category)}
                 className={`w-full text-left px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
                   activeCategory === category
-                    ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900"
-                    : "text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                    ? "bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900"
+                    : "text-[#3d4a3d] dark:text-zinc-400 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800"
                 }`}
               >
                 {category}
@@ -46,7 +46,7 @@ export default function BlogList({ posts, categories }: BlogListProps) {
           <AnimatedItem key={post.href} index={index} baseDelay={100}>
             <a
               href={post.href}
-              className="glass-card group block overflow-hidden rounded-2xl no-underline"
+              className="group block overflow-hidden rounded-2xl bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 shadow-lg no-underline"
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -56,14 +56,14 @@ export default function BlogList({ posts, categories }: BlogListProps) {
                 />
               </div>
               <div className="p-5">
-                <p className="text-[11px] font-semibold tracking-wider uppercase text-zinc-400 mb-2">
+                <p className="text-[11px] font-semibold tracking-wider uppercase text-[#4d6b2f] dark:text-indigo-400 mb-2">
                   {post.category}
                 </p>
-                <h3 className="font-semibold text-zinc-900 dark:text-zinc-100 mb-1">
+                <h3 className="font-semibold text-[#1f2a1f] dark:text-zinc-100 mb-1">
                   {post.title}
                 </h3>
-                <p className="text-sm text-zinc-400 mb-2">{post.date}</p>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                <p className="text-sm text-[#5f695d] mb-2">{post.date}</p>
+                <p className="text-sm text-[#3d4a3d] dark:text-zinc-400">
                   {post.excerpt}
                 </p>
               </div>

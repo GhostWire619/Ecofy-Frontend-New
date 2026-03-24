@@ -39,7 +39,7 @@ export default function Header({ navigation }: HeaderProps) {
       <header
         className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "top-0 backdrop-blur-xl bg-white/80 dark:bg-zinc-950/80 shadow-sm border-b border-zinc-200/10 dark:border-zinc-800/50"
+            ? "top-0 backdrop-blur-xl bg-[#ffffff]/80 dark:bg-zinc-950/80 shadow-sm border-b border-[#1f2a1f]/10 dark:border-zinc-800/50"
             : ""
         }`}
       >
@@ -51,14 +51,14 @@ export default function Header({ navigation }: HeaderProps) {
           >
             {/* Brand */}
             <a className="flex items-center gap-3 no-underline" href="/">
-              <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-bold">
+              <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 text-sm font-bold">
                 E
               </span>
               <div className="hidden sm:flex flex-col">
-                <strong className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-tight">
+                <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-100 leading-tight">
                   {navigation.name}
                 </strong>
-                <span className="text-[11px] text-zinc-500 dark:text-zinc-400 leading-tight">
+                <span className="text-[11px] text-[#5f695d] dark:text-zinc-400 leading-tight">
                   {navigation.subtitle}
                 </span>
               </div>
@@ -70,7 +70,7 @@ export default function Header({ navigation }: HeaderProps) {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-3 py-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors no-underline"
+                  className="px-3 py-2 text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
                 >
                   {item.label}
                 </a>
@@ -83,7 +83,7 @@ export default function Header({ navigation }: HeaderProps) {
                 onMouseLeave={() => setIsSolutionsOpen(false)}
               >
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  className="flex items-center gap-1 px-3 py-2 text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors"
                   type="button"
                   aria-expanded={isSolutionsOpen}
                   onClick={() => setIsSolutionsOpen((o) => !o)}
@@ -99,20 +99,20 @@ export default function Header({ navigation }: HeaderProps) {
                 </button>
 
                 <div
-                  className={`absolute top-full right-0 mt-2 w-[520px] rounded-2xl border border-zinc-200/60 dark:border-zinc-700/60 bg-white dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
+                  className={`absolute top-full right-0 mt-2 w-[520px] rounded-2xl border border-[#1f2a1f]/10 dark:border-zinc-700/60 bg-[#ffffff] dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
                     isSolutionsOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <div className="p-5 border-b border-zinc-100 dark:border-zinc-800">
-                    <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-1">
+                  <div className="p-5 border-b border-[#1f2a1f]/8 dark:border-zinc-800">
+                    <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-1">
                       Platform solutions
                     </p>
-                    <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                    <h3 className="text-base font-semibold text-[#1f2a1f] dark:text-zinc-100">
                       Tools built for the field
                     </h3>
-                    <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                    <span className="text-sm text-[#5f695d] dark:text-zinc-400">
                       Explore the core products powering Ecofy&apos;s digital ecosystem.
                     </span>
                   </div>
@@ -120,20 +120,20 @@ export default function Header({ navigation }: HeaderProps) {
                     {navigation.solutions.map((item) => (
                       <a
                         key={item.title}
-                        className="flex flex-col gap-1 p-3 rounded-xl hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors no-underline"
+                        className="flex flex-col gap-1 p-3 rounded-xl hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
                         href={item.href}
                       >
-                        <strong className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                        <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-100">
                           {item.title}
                         </strong>
-                        <span className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                        <span className="text-xs text-[#5f695d] dark:text-zinc-400 leading-relaxed">
                           {item.description}
                         </span>
                       </a>
                     ))}
                   </div>
                   <a
-                    className="block text-center py-3 text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-white border-t border-zinc-100 dark:border-zinc-800 no-underline transition-colors"
+                    className="block text-center py-3 text-xs font-medium text-[#5f695d] hover:text-[#1f2a1f] dark:hover:text-white border-t border-[#1f2a1f]/8 dark:border-zinc-800 no-underline transition-colors"
                     href="/how-we-help-clients"
                   >
                     View all solutions
@@ -145,7 +145,7 @@ export default function Header({ navigation }: HeaderProps) {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-3 py-2 text-[13px] font-medium text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors no-underline"
+                  className="px-3 py-2 text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
                 >
                   {item.label}
                 </a>
@@ -156,8 +156,8 @@ export default function Header({ navigation }: HeaderProps) {
             <a
               className={`hidden md:inline-flex px-5 py-2.5 text-[13px] font-medium rounded-xl transition-all no-underline ${
                 isScrolled
-                  ? "bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:opacity-90"
-                  : "bg-white/90 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 hover:bg-white dark:hover:bg-zinc-700"
+                  ? "bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 hover:opacity-90"
+                  : "bg-white/90 dark:bg-zinc-800 text-[#1f2a1f] dark:text-zinc-100 hover:bg-white dark:hover:bg-zinc-700"
               }`}
               href={navigation.cta.href}
             >
@@ -172,17 +172,17 @@ export default function Header({ navigation }: HeaderProps) {
               aria-expanded={isMobileMenuOpen}
             >
               <span
-                className={`block w-5 h-[1.5px] bg-zinc-800 dark:bg-zinc-200 transition-all duration-300 ${
+                className={`block w-5 h-[1.5px] bg-[#1f2a1f] dark:bg-zinc-200 transition-all duration-300 ${
                   isMobileMenuOpen ? "rotate-45 translate-y-[4.5px]" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-[1.5px] bg-zinc-800 dark:bg-zinc-200 transition-all duration-300 ${
+                className={`block w-5 h-[1.5px] bg-[#1f2a1f] dark:bg-zinc-200 transition-all duration-300 ${
                   isMobileMenuOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block w-5 h-[1.5px] bg-zinc-800 dark:bg-zinc-200 transition-all duration-300 ${
+                className={`block w-5 h-[1.5px] bg-[#1f2a1f] dark:bg-zinc-200 transition-all duration-300 ${
                   isMobileMenuOpen ? "-rotate-45 -translate-y-[4.5px]" : ""
                 }`}
               />
@@ -193,7 +193,7 @@ export default function Header({ navigation }: HeaderProps) {
 
       {/* Mobile Navigation */}
       <nav
-        className={`fixed inset-0 z-30 bg-white dark:bg-zinc-950 transition-all duration-300 md:hidden ${
+        className={`fixed inset-0 z-30 bg-[#ffffff] dark:bg-zinc-950 transition-all duration-300 md:hidden ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -207,18 +207,18 @@ export default function Header({ navigation }: HeaderProps) {
               key={item.label}
               href={item.href}
               onClick={handleMobileNavClick}
-              className="px-4 py-3 text-lg font-medium text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
+              className="px-4 py-3 text-lg font-medium text-[#3d4a3d] dark:text-zinc-200 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
             >
               {item.label}
             </a>
           ))}
-          <div className="h-px bg-zinc-200 dark:bg-zinc-800 my-2" />
+          <div className="h-px bg-[#1f2a1f]/10 dark:bg-zinc-800 my-2" />
           {navigation.solutions.map((item) => (
             <a
               key={item.title}
               href={item.href}
               onClick={handleMobileNavClick}
-              className="px-4 py-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
+              className="px-4 py-2 text-sm text-[#5f695d] dark:text-zinc-400 hover:text-[#1f2a1f] dark:hover:text-white hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
             >
               {item.title}
             </a>
@@ -226,7 +226,7 @@ export default function Header({ navigation }: HeaderProps) {
         </div>
         <div className="px-6 mt-4">
           <a
-            className="block w-full text-center px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium rounded-xl hover:opacity-90 transition-opacity no-underline"
+            className="block w-full text-center px-6 py-3 bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 font-medium rounded-xl hover:opacity-90 transition-opacity no-underline"
             href={navigation.cta.href}
             onClick={handleMobileNavClick}
           >

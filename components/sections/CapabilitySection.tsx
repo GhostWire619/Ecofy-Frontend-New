@@ -21,21 +21,21 @@ export default function CapabilitySection({
             animation={reversed ? "fade-right" : "fade-left"}
             className={reversed ? "lg:order-2" : ""}
           >
-            <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-3xl font-bold text-[#1f2a1f] dark:text-zinc-100">
               {capability.title}
             </h2>
-            <p className="mt-3 text-zinc-500">{capability.tagline}</p>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="mt-3 text-[#5f695d] dark:text-zinc-400">{capability.tagline}</p>
+            <p className="mt-4 text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
               {capability.description}
             </p>
             <ul className="mt-6 space-y-3">
               {capability.features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-400"
+                  className="flex items-start gap-3 text-sm text-[#3d4a3d] dark:text-zinc-400"
                 >
                   <svg
-                    className="w-5 h-5 mt-0.5 flex-shrink-0 text-emerald-500"
+                    className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#4d6b2f]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

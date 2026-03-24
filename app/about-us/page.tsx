@@ -42,17 +42,17 @@ export default function AboutUsPage() {
 
               {/* Text */}
               <AnimatedSection animation="fade-left">
-                <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-3">
+                <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-3">
                   Our Mission
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100 leading-tight mb-6">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#1f2a1f] dark:text-zinc-100 leading-tight mb-6">
                   {aboutPage.mission}
                 </h2>
                 <div className="space-y-4">
                   {aboutPage.story.map((paragraph, i) => (
                     <p
                       key={i}
-                      className="text-zinc-500 dark:text-zinc-400 leading-relaxed"
+                      className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed"
                     >
                       {paragraph}
                     </p>
@@ -68,10 +68,10 @@ export default function AboutUsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection animation="fade-up">
               <div className="max-w-3xl mx-auto text-center">
-                <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-6">
+                <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-6">
                   Our Vision
                 </p>
-                <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
+                <blockquote className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug text-transparent bg-clip-text bg-gradient-to-r from-[#4d6b2f] to-[#c48738]">
                   {aboutPage.vision}
                 </blockquote>
               </div>
@@ -84,10 +84,10 @@ export default function AboutUsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <AnimatedSection animation="fade-up">
               <div className="text-center max-w-2xl mx-auto mb-14">
-                <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-3">
+                <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-3">
                   Our Values
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#1f2a1f] dark:text-zinc-100">
                   What drives everything we build
                 </h2>
               </div>
@@ -96,11 +96,11 @@ export default function AboutUsPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {aboutPage.values.map((value, i) => (
                 <AnimatedItem key={value.title} index={i} baseDelay={120}>
-                  <div className="h-full rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-900/50 backdrop-blur-sm p-8 transition-transform hover:-translate-y-1">
-                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                  <div className="h-full rounded-2xl border border-[#1f2a1f]/10 dark:border-zinc-800/60 bg-[#ffffff] dark:bg-zinc-900/50 p-8 transition-transform hover:-translate-y-1">
+                    <h3 className="text-lg font-semibold text-[#1f2a1f] dark:text-zinc-100 mb-3">
                       {value.title}
                     </h3>
-                    <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
                       {value.description}
                     </p>
                   </div>

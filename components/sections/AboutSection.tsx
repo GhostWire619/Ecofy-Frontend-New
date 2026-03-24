@@ -17,24 +17,24 @@ export default function AboutSection({ about }: AboutSectionProps) {
         />
       </div>
       <div className="flex flex-col gap-5">
-        <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+        <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
           About our company
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-zinc-900 via-zinc-600 to-zinc-900 dark:from-white dark:via-zinc-400 dark:to-white bg-clip-text text-transparent">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white">
           {about.title}
         </h2>
-        <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed">
+        <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
           {about.description}
         </p>
-        <div className="backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-6 mt-2 flex flex-col gap-3">
-          <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+        <div className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-6 mt-2 flex flex-col gap-3">
+          <h3 className="text-lg font-semibold text-[#1f2a1f] dark:text-white">
             {about.platformTitle}
           </h3>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
+          <p className="text-sm text-[#3d4a3d] dark:text-zinc-400">
             {about.platformDescription}
           </p>
           <a
-            className="inline-flex px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-medium hover:opacity-90 transition no-underline self-start"
+            className="inline-flex px-6 py-3 bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 rounded-xl font-medium hover:opacity-90 transition no-underline self-start"
             href={about.href}
           >
             Read More

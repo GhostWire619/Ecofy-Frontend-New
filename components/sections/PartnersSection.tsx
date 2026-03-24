@@ -17,7 +17,7 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
   }, []);
 
   return (
-    <section className="py-10 overflow-hidden bg-white/50 dark:bg-zinc-950/50 border-y border-zinc-200/10 dark:border-zinc-800/30">
+    <section className="py-10 overflow-hidden">
       <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
         <div
           className={`flex w-max gap-12 ${

@@ -8,7 +8,6 @@ import {
   partners,
   pillars,
   posts,
-  projects,
   services,
   stats,
   testimonials,
@@ -21,7 +20,6 @@ import ServiceGrid from "@/components/sections/ServiceGrid";
 import PillarsSection from "@/components/sections/PillarsSection";
 import AdvisoryTabs from "@/components/sections/AdvisoryTabs";
 import StatsSection from "@/components/sections/StatsSection";
-import ProjectsSection from "@/components/sections/ProjectsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import NewsSection from "@/components/sections/NewsSection";
@@ -34,11 +32,13 @@ export default function HomePage() {
       <Header navigation={navigation} />
       <main>
         <Hero slides={heroSlides} />
-        <PartnersSection partners={partners} />
+        {/* Gradient transition from hero cream to white */}
+        <div className="bg-gradient-to-b from-[#eae8e5] to-white dark:from-[#09090b] dark:to-[#09090b]">
+          <PartnersSection partners={partners} />
+        </div>
         <ServiceGrid services={services} />
         <PillarsSection pillars={pillars} cta={cta} />
         <AdvisoryTabs areas={advisoryAreas} />
-        <ProjectsSection projects={projects} />
         <StatsSection stats={stats} />
         <TestimonialsSection testimonials={testimonials} />
         <NewsSection posts={posts} />

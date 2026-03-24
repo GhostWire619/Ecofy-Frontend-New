@@ -36,16 +36,16 @@ export default function HowWeHelpClientsPage() {
         {/* CTA */}
         <section className="pb-20 lg:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1f2a1f] dark:text-zinc-100">
               Ready to get started?
             </h2>
-            <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
+            <p className="mt-3 text-[#3d4a3d] dark:text-zinc-400 max-w-xl mx-auto">
               See how Ecofy can help you make confident farming decisions backed
               by real data.
             </p>
             <a
               href="/contact"
-              className="button-primary inline-block mt-6 px-6 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="inline-block mt-6 px-6 py-3 rounded-full bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 text-sm font-semibold hover:opacity-90 transition-opacity"
             >
               Contact us
             </a>

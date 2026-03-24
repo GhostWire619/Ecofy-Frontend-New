@@ -17,7 +17,9 @@ export default function Hero({ slides }: HeroProps) {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28">
+    <section
+      className="hero-gradient relative min-h-[90vh] flex items-center overflow-hidden pt-28 pb-20 lg:pt-36 lg:pb-28"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Copy */}
         <div
@@ -25,21 +27,18 @@ export default function Hero({ slides }: HeroProps) {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+          <p className="text-[11px] font-semibold tracking-widest uppercase text-white/70">
             {first.eyebrow}
           </p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-            <span className="bg-gradient-to-r from-zinc-900 via-zinc-600 to-zinc-900 dark:from-white dark:via-zinc-400 dark:to-white bg-clip-text text-transparent">
-              {first.title.split(" ").slice(0, 2).join(" ")}
-            </span>{" "}
-            {first.title.split(" ").slice(2).join(" ")}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+            {first.title}
           </h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-xl leading-relaxed">
+          <p className="text-lg text-white/80 max-w-xl leading-relaxed">
             {first.description}
           </p>
           <div className="flex flex-wrap gap-4 mt-2">
             <a
-              className="inline-flex items-center gap-2 px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-medium hover:opacity-90 transition no-underline"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white/95 text-[#141a29] rounded-xl font-medium hover:bg-white transition no-underline"
               href={first.primary.href}
             >
               {first.primary.label}
@@ -60,7 +59,7 @@ export default function Hero({ slides }: HeroProps) {
               </svg>
             </a>
             <a
-              className="inline-flex px-6 py-3 border border-zinc-300 dark:border-zinc-700 rounded-xl font-medium hover:bg-zinc-100 dark:hover:bg-zinc-800 transition no-underline"
+              className="inline-flex px-6 py-3 border border-white/30 rounded-xl font-medium text-white hover:bg-white/10 transition no-underline"
               href={first.secondary.href}
             >
               {first.secondary.label}
@@ -75,7 +74,7 @@ export default function Hero({ slides }: HeroProps) {
           }`}
         >
           {/* Main card */}
-          <article className="relative rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-1">
+          <article className="relative rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-1 border border-white/10">
             <img
               src={first.image}
               alt={first.title}
@@ -84,17 +83,17 @@ export default function Hero({ slides }: HeroProps) {
           </article>
 
           {/* Accent glass card */}
-          <article className="absolute -bottom-6 -left-6 w-56 backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-4 transition-transform hover:-translate-y-1">
+          <article className="absolute -bottom-6 -left-6 w-56 bg-white/90 dark:bg-zinc-900/80 border border-white/20 dark:border-zinc-800/50 rounded-2xl shadow-lg p-4 backdrop-blur-sm transition-transform hover:-translate-y-1">
             <img
               src={second.image}
               alt={second.title}
               className="w-full h-28 object-cover rounded-xl mb-3"
             />
             <div>
-              <p className="text-[11px] font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+              <p className="text-[11px] font-semibold tracking-widest uppercase text-indigo-600">
                 {second.eyebrow}
               </p>
-              <h2 className="text-sm font-semibold mt-1">{second.title}</h2>
+              <h2 className="text-sm font-semibold mt-1 text-[#1f2a1f]">{second.title}</h2>
             </div>
           </article>
         </div>
@@ -106,11 +105,11 @@ export default function Hero({ slides }: HeroProps) {
           isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <span className="text-[11px] font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+        <span className="text-[11px] font-medium tracking-widest uppercase text-white/60">
           Scroll to explore
         </span>
-        <div className="relative w-px h-8 bg-zinc-300 dark:bg-zinc-700 overflow-hidden rounded-full">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-zinc-900 dark:bg-white rounded-full animate-bounce" />
+        <div className="relative w-px h-8 bg-white/30 overflow-hidden rounded-full">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-white rounded-full animate-bounce" />
         </div>
       </div>
     </section>

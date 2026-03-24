@@ -29,17 +29,17 @@ export default function OurTeamPage() {
         {/* CTA */}
         <section className="pb-20 lg:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
-            <div className="backdrop-blur-md bg-white/80 dark:bg-zinc-900/80 border border-zinc-200/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-10 sm:p-14 text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
+            <div className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-10 sm:p-14 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1f2a1f] dark:text-zinc-100">
                 Join us
               </h2>
-              <p className="mt-3 text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto">
+              <p className="mt-3 text-[#3d4a3d] dark:text-zinc-400 max-w-xl mx-auto">
                 We are always looking for talented people who share our mission
                 of empowering smallholder farmers with actionable intelligence.
               </p>
               <a
                 href="/contact"
-                className="inline-block mt-6 px-6 py-3 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-semibold hover:opacity-90 transition-opacity"
+                className="inline-block mt-6 px-6 py-3 rounded-full bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 Get in touch
               </a>
