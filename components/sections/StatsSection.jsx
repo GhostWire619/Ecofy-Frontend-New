@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function StatsSection({ stats }) {
   return (
@@ -12,16 +12,14 @@ export default function StatsSection({ stats }) {
         </div>
       </AnimatedSection>
 
-      <div className="stats-redesign-grid">
-        {stats.map((stat, index) => (
-          <AnimatedItem key={stat.label} index={index} baseDelay={100} animation="scale">
-            <article className="stats-redesign-card">
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </article>
-          </AnimatedItem>
+      <AnimatedSection animation="stagger" stagger className="stats-redesign-grid">
+        {stats.map((stat) => (
+          <article key={stat.label} className="stats-redesign-card hover-lift glass-card">
+            <strong className="text-gradient">{stat.value}</strong>
+            <span>{stat.label}</span>
+          </article>
         ))}
-      </div>
+      </AnimatedSection>
     </section>
   );
 }

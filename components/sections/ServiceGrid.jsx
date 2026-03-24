@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
+import AnimatedSection, { AnimatedCard } from "@/components/ui/AnimatedSection";
 
 export default function ServiceGrid({ services }) {
   const [highlight, ...rest] = services;
@@ -20,26 +20,24 @@ export default function ServiceGrid({ services }) {
 
       <div className="service-redesign-layout">
         <AnimatedSection animation="fade-right" delay={100}>
-          <article className="service-feature-card">
+          <article className="service-feature-card glass-card">
             <span className="service-feature-kicker">Spotlight module</span>
             <h3>{highlight.title}</h3>
             <p>{highlight.description}</p>
-            <a href={highlight.href}>Open module</a>
+            <a href={highlight.href} className="magnetic-btn">Open module &rarr;</a>
           </article>
         </AnimatedSection>
 
-        <div className="service-stream-grid">
+        <AnimatedSection animation="stagger" stagger className="service-stream-grid">
           {rest.map((service, index) => (
-            <AnimatedItem key={service.title} index={index} baseDelay={150} animation="fade-up">
-              <article className="service-stream-card">
-                <span className="service-stream-index">0{index + 2}</span>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href={service.href}>Details</a>
-              </article>
-            </AnimatedItem>
+            <article key={service.title} className="service-stream-card hover-lift">
+              <span className="service-stream-index">0{index + 2}</span>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <a href={service.href}>Details &rarr;</a>
+            </article>
           ))}
-        </div>
+        </AnimatedSection>
       </div>
 
       <AnimatedSection animation="fade-up" delay={300}>

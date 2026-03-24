@@ -1,6 +1,6 @@
 "use client";
 
-import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function TestimonialsSection({ testimonials }) {
   const [spotlight, ...stories] = testimonials;
@@ -17,7 +17,7 @@ export default function TestimonialsSection({ testimonials }) {
 
         <div className="testimonial-redesign-grid">
           <AnimatedSection animation="fade-right" delay={100}>
-            <article className="testimonial-spotlight">
+            <article className="testimonial-spotlight glass-card hover-lift">
               <p>&ldquo;{spotlight.quote}&rdquo;</p>
               <div className="testimonial-person">
                 <img src={spotlight.image} alt={spotlight.name} />
@@ -29,22 +29,20 @@ export default function TestimonialsSection({ testimonials }) {
             </article>
           </AnimatedSection>
 
-          <div className="testimonial-stack">
-            {stories.map((item, index) => (
-              <AnimatedItem key={item.name} index={index} baseDelay={200} animation="fade-left">
-                <article className="testimonial-story">
-                  <p>&ldquo;{item.quote}&rdquo;</p>
-                  <div className="testimonial-person">
-                    <img src={item.image} alt={item.name} />
-                    <div>
-                      <strong>{item.name}</strong>
-                      <span>{item.location}</span>
-                    </div>
+          <AnimatedSection animation="stagger" stagger className="testimonial-stack">
+            {stories.map((item) => (
+              <article key={item.name} className="testimonial-story glass-card hover-lift">
+                <p>&ldquo;{item.quote}&rdquo;</p>
+                <div className="testimonial-person">
+                  <img src={item.image} alt={item.name} />
+                  <div>
+                    <strong>{item.name}</strong>
+                    <span>{item.location}</span>
                   </div>
-                </article>
-              </AnimatedItem>
+                </div>
+              </article>
             ))}
-          </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>

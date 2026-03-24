@@ -29,20 +29,22 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
-    <main className="page-shell">
+    <>
       <TopBar />
       <Header navigation={navigation} />
-      <Hero slides={heroSlides} />
-      <PartnersSection partners={partners} />
-      <ServiceGrid services={services} />
-      <PillarsSection pillars={pillars} cta={cta} />
-      <AdvisoryTabs areas={advisoryAreas} />
-      <ProjectsSection projects={projects} />
-      <StatsSection stats={stats} />
-      <TestimonialsSection testimonials={testimonials} />
-      <NewsSection posts={posts} />
-      <ContactSection services={services} contactDetails={contactDetails} />
+      <main>
+        <Hero slides={heroSlides} />
+        <PartnersSection partners={partners} />
+        <ServiceGrid services={services} />
+        <PillarsSection pillars={pillars} cta={cta} />
+        <AdvisoryTabs areas={advisoryAreas} />
+        <ProjectsSection projects={projects} />
+        <StatsSection stats={stats} />
+        <TestimonialsSection testimonials={testimonials} />
+        <NewsSection posts={posts} />
+        <ContactSection services={services} contactDetails={contactDetails} />
+      </main>
       <Footer footer={footer} />
-    </main>
+    </>
   );
 }
