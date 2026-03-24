@@ -1,18 +1,21 @@
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Ecofy Solutions Ltd | Farm Intelligence Platform",
-  description: "Digital growth tools for modern farmers and rural agribusinesses. Farm analysis, guidance, and market intelligence for stronger agricultural value chains.",
-  keywords: "agriculture, farming, agritech, Tanzania, Africa, farm intelligence, market access",
+  description:
+    "Predict. Guide. Reward. Ecofy eliminates agricultural uncertainty for smallholder farmers in Tanzania with localized crop data, climate patterns, and market intelligence.",
+  keywords:
+    "agriculture, farming, agritech, Tanzania, Africa, farm intelligence, market access, smallholder farmers",
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
@@ -21,7 +24,11 @@ export const viewport = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
@@ -40,7 +47,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body style={{ fontFamily: "var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" }}>
+      <body className="font-[var(--font-inter)] antialiased">
         {children}
       </body>
     </html>

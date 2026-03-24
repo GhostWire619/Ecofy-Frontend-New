@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(ls \"C:/Users/lugat/OneDrive/Documents/New project/.claude/worktrees/eager-goldberg/next.config\"*)",
+      "Bash(ls \"C:/Users/lugat/OneDrive/Documents/New project/.claude/worktrees/eager-goldberg/postcss.config\"*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //IM node.exe)"
+    ]
+  }
+}

@@ -1,9 +1,22 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 
-export function useScrollAnimation(options = {}) {
-  const ref = useRef(null);
+interface ScrollAnimationOptions {
+  threshold?: number;
+  rootMargin?: string;
+  triggerOnce?: boolean;
+}
+
+interface ScrollAnimationReturn {
+  ref: RefObject<HTMLDivElement | null>;
+  isVisible: boolean;
+}
+
+export function useScrollAnimation(
+  options: ScrollAnimationOptions = {}
+): ScrollAnimationReturn {
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const {
@@ -31,15 +44,19 @@ export function useScrollAnimation(options = {}) {
     );
 
     observer.observe(element);
-
     return () => observer.disconnect();
   }, [threshold, rootMargin, triggerOnce]);
 
   return { ref, isVisible };
 }
 
-export function useParallax(speed = 0.5) {
-  const ref = useRef(null);
+interface ParallaxReturn {
+  ref: RefObject<HTMLDivElement | null>;
+  offset: number;
+}
+
+export function useParallax(speed = 0.5): ParallaxReturn {
+  const ref = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
@@ -51,7 +68,7 @@ export function useParallax(speed = 0.5) {
       const scrolled = window.scrollY;
       const elementTop = rect.top + scrolled;
       const relativeScroll = scrolled - elementTop + window.innerHeight;
-      
+
       if (relativeScroll > 0 && relativeScroll < window.innerHeight + rect.height) {
         setOffset(relativeScroll * speed);
       }
@@ -59,16 +76,15 @@ export function useParallax(speed = 0.5) {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [speed]);
 
   return { ref, offset };
 }
 
-export function useStaggerAnimation(itemCount, baseDelay = 0.1) {
-  const [visibleItems, setVisibleItems] = useState([]);
-  const containerRef = useRef(null);
+export function useStaggerAnimation(itemCount: number, baseDelay = 0.1) {
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -77,13 +93,10 @@ export function useStaggerAnimation(itemCount, baseDelay = 0.1) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Stagger the animation of children
-          const items = [];
           for (let i = 0; i < itemCount; i++) {
             setTimeout(() => {
               setVisibleItems((prev) => [...prev, i]);
             }, i * baseDelay * 1000);
-            items.push(i);
           }
           observer.unobserve(container);
         }
@@ -92,7 +105,6 @@ export function useStaggerAnimation(itemCount, baseDelay = 0.1) {
     );
 
     observer.observe(container);
-
     return () => observer.disconnect();
   }, [itemCount, baseDelay]);
 
