@@ -1,23 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export default function PartnersSection({ partners }) {
-  const marqueePartners = [...partners, ...partners];
+  const [isVisible, setIsVisible] = useState(false);
+  const marqueePartners = [...partners, ...partners, ...partners];
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 200);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <section className="logo-marquee-section">
-      <div className="shell">
-        <div className="section-heading logo-marquee-heading">
-          <p className="eyebrow">Trusted by institutions across finance, government, and development</p>
-        </div>
-      </div>
-      <div className="logo-marquee-shell">
-        <div className="logo-marquee-track">
+    <section className="partners-strip">
+      <div className="partners-track-wrapper">
+        <div className={`partners-track ${isVisible ? "is-scrolling" : ""}`}>
           {marqueePartners.map((partner, index) => (
-            <article
+            <div
               key={`${partner.name}-${index}`}
-              className="logo-marquee-item"
+              className="partner-logo"
               title={partner.name}
             >
-              <img src={partner.logo} alt={partner.name} />
-            </article>
+              <img src={partner.logo} alt={partner.name} loading="lazy" />
+            </div>
           ))}
         </div>
       </div>
