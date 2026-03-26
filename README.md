@@ -11,6 +11,20 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Run with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+Open `http://localhost:3000`.
+
+To stop containers:
+
+```bash
+docker compose down
+```
+
 ## Production check
 
 ```bash
