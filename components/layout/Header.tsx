@@ -37,16 +37,16 @@ export default function Header({ navigation }: HeaderProps) {
   return (
     <>
       <header
-        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 rounded-2xl ${
           isScrolled
-            ? "top-0 backdrop-blur-xl bg-[#ffffff]/80 dark:bg-zinc-950/80 shadow-sm border-b border-[#1f2a1f]/10 dark:border-zinc-800/50"
-            : ""
+            ? "!left-8 !right-8 backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
+            : "border border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div
             className={`flex items-center justify-between transition-all duration-300 ${
-              isScrolled ? "h-16" : "h-20"
+              isScrolled ? "h-14" : "h-20"
             }`}
           >
             {/* Brand */}

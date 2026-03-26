@@ -25,6 +25,7 @@ export default function HowWeHelpClientsPage() {
             { label: "Home", href: "/" },
             { label: "How We Help" },
           ]}
+          backgroundImage="/uploads/2021/03/hm-2-counter-bg.jpg"
         />
 
         <CapabilitySection capability={capabilities[0]} />

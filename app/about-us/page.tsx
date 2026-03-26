@@ -22,6 +22,7 @@ export default function AboutUsPage() {
           title="Eliminating agricultural uncertainty for smallholder farmers"
           subtitle="Ecofy combines localized crop data, climate patterns, and market intelligence into actionable, personalized insights."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+          backgroundImage="/uploads/2023/03/corn-vs-maize-01.webp"
         />
 
         {/* Mission & Story */}
