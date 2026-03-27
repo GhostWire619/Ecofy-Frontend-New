@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import type { Partner } from "@/lib/site-data";
 
 interface PartnersSectionProps {
@@ -30,10 +31,12 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
               className="flex-shrink-0 flex items-center justify-center h-10 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
               title={partner.name}
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
-                loading="lazy"
+                width={173}
+                height={40}
+                sizes="173px"
                 className="h-full w-auto object-contain"
               />
             </div>

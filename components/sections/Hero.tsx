@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import type { HeroSlide } from "@/lib/site-data";
 
 interface HeroProps {
@@ -75,18 +76,25 @@ export default function Hero({ slides }: HeroProps) {
         >
           {/* Main card */}
           <article className="relative rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-1 border border-white/10">
-            <img
+            <Image
               src={first.image}
               alt={first.title}
+              width={582}
+              height={310}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full h-auto object-cover"
+              priority
             />
           </article>
 
           {/* Accent glass card */}
           <article className="absolute -bottom-6 -left-6 w-56 bg-white/90 dark:bg-zinc-900/80 border border-white/20 dark:border-zinc-800/50 rounded-2xl shadow-lg p-4 backdrop-blur-sm transition-transform hover:-translate-y-1">
-            <img
+            <Image
               src={second.image}
               alt={second.title}
+              width={210}
+              height={112}
+              sizes="210px"
               className="w-full h-28 object-cover rounded-xl mb-3"
             />
             <div>

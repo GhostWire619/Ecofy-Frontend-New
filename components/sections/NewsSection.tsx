@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { Post } from "@/lib/site-data";
 
@@ -34,10 +35,12 @@ export default function NewsSection({ posts }: NewsSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         <AnimatedSection animation="fade-right" delay={100}>
           <article className="lg:col-span-3 relative group overflow-hidden rounded-2xl aspect-[4/3]">
-            <img
+            <Image
               src={featured.image}
               alt={featured.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              fill
+              sizes="(max-width: 1024px) 100vw, 60vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8">
               <span className="text-xs text-zinc-300">{featured.date}</span>
@@ -66,9 +69,12 @@ export default function NewsSection({ posts }: NewsSectionProps) {
               animation="fade-left"
             >
               <article className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg overflow-hidden flex flex-row h-full">
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={144}
+                  height={144}
+                  sizes="144px"
                   className="w-28 sm:w-36 object-cover flex-shrink-0"
                 />
                 <div className="flex flex-col justify-center p-4 gap-1">

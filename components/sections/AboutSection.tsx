@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { About } from "@/lib/site-data";
 
 interface AboutSectionProps {
@@ -9,11 +10,13 @@ interface AboutSectionProps {
 export default function AboutSection({ about }: AboutSectionProps) {
   return (
     <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div className="overflow-hidden rounded-2xl">
-        <img
+      <div className="overflow-hidden rounded-2xl relative aspect-[4/3]">
+        <Image
           src={about.image}
           alt="Ecofy Solutions leadership"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
         />
       </div>
       <div className="flex flex-col gap-5">

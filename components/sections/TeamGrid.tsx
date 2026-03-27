@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { TeamMember } from "@/lib/site-data";
 
@@ -14,9 +15,12 @@ export default function TeamGrid({ members }: TeamGridProps) {
         {members.map((member, i) => (
           <AnimatedItem key={member.name} index={i} baseDelay={120}>
             <article className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg overflow-hidden transition-transform hover:-translate-y-1">
-              <img
+              <Image
                 src={member.image}
                 alt={member.name}
+                width={400}
+                height={400}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 className="aspect-square object-cover w-full"
               />
               <div className="p-5">

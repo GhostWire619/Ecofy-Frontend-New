@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Testimonial } from "@/lib/site-data";
 
@@ -31,9 +32,12 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                 &ldquo;{spotlight.quote}&rdquo;
               </p>
               <div className="mt-6 flex items-center gap-4">
-                <img
+                <Image
                   src={spotlight.image}
                   alt={spotlight.name}
+                  width={48}
+                  height={48}
+                  sizes="48px"
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
@@ -58,9 +62,12 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                   &ldquo;{item.quote}&rdquo;
                 </p>
                 <div className="mt-4 flex items-center gap-3">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
+                    width={40}
+                    height={40}
+                    sizes="40px"
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>

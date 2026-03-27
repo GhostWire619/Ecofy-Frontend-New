@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { AdvisoryArea } from "@/lib/site-data";
 
@@ -81,10 +82,12 @@ export default function AdvisoryTabs({ areas }: AdvisoryTabsProps) {
             </div>
 
             <div className="relative aspect-[4/3] md:aspect-auto">
-              <img
+              <Image
                 src={activeArea.image}
                 alt={activeArea.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </article>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Capability } from "@/lib/site-data";
 
@@ -57,11 +58,13 @@ export default function CapabilitySection({
           <AnimatedSection
             animation={reversed ? "fade-left" : "fade-right"}
           >
-            <div className="rounded-2xl overflow-hidden">
-              <img
+            <div className="rounded-2xl overflow-hidden relative aspect-video">
+              <Image
                 src={capability.image}
                 alt={capability.title}
-                className="w-full h-auto object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
               />
             </div>
           </AnimatedSection>

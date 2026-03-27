@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { Project } from "@/lib/site-data";
 
@@ -34,10 +35,12 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           <AnimatedSection animation="fade-right" delay={100}>
             <article className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg overflow-hidden">
               <div className="relative aspect-video">
-                <img
+                <Image
                   src={activeProject.image}
                   alt={activeProject.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-4 left-4 bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-xl px-4 py-2 shadow-lg">
                   <span className="block text-[11px] font-medium uppercase text-[#4d6b2f] dark:text-indigo-400">

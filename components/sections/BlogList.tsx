@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { Post } from "@/lib/site-data";
 
@@ -48,11 +49,13 @@ export default function BlogList({ posts, categories }: BlogListProps) {
               href={post.href}
               className="group block overflow-hidden rounded-2xl bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 shadow-lg no-underline"
             >
-              <div className="aspect-video overflow-hidden">
-                <img
+              <div className="aspect-video overflow-hidden relative">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover rounded-t-2xl transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                  className="object-cover rounded-t-2xl transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="p-5">
