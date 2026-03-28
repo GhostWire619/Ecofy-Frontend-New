@@ -57,7 +57,7 @@ export default function Header({ navigation }: HeaderProps) {
                 alt={navigation.name}
                 width={180}
                 height={50}
-                className="h-10 w-auto md:h-12"
+                className="h-28 w-auto md:h-32"
                 priority
               />
             </a>
