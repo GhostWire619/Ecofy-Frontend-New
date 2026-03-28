@@ -15,10 +15,10 @@ export default function ContactSection({ services, contactDetails }: ContactSect
         <AnimatedSection animation="fade-right" className="lg:col-span-3">
           <div className="bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-2xl shadow-lg p-8 sm:p-10 h-full">
             <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-              Start a conversation
+              Get in touch
             </p>
             <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-[#1f2a1f] dark:text-white">
-              Tell us where you need support and we will shape the right stack
+              Tell us how we can help you grow
             </h2>
             <form className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
@@ -94,6 +94,12 @@ export default function ContactSection({ services, contactDetails }: ContactSect
               className="text-lg font-semibold text-[#1f2a1f] dark:text-white hover:opacity-80 transition no-underline"
             >
               {contactDetails.phone}
+            </a>
+            <a
+              href="mailto:info@ecofy.co.tz"
+              className="text-sm font-medium text-[#4d6b2f] dark:text-indigo-400 hover:opacity-80 transition no-underline"
+            >
+              info@ecofy.co.tz
             </a>
             <div className="flex flex-wrap gap-2 mt-2">
               <span className="px-3 py-1 text-xs font-medium rounded-full bg-[#f0f0f0] dark:bg-zinc-800 text-[#3d4a3d] dark:text-zinc-400">

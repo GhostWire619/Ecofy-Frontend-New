@@ -146,9 +146,9 @@ export interface AboutPage {
 
 export const navigation: Navigation = {
   tagline: "Actionable intelligence for smallholder farmers in Tanzania.",
-  phone: "+255 752 231 143",
-  phoneRaw: "+255752231143",
-  name: "Ecofy Solutions Ltd",
+  phone: "+266 749 498 117",
+  phoneRaw: "+266749498117",
+  name: "Ecofy Africa",
   subtitle: "Farm Intelligence Platform",
   logo: "/ecoo full with text no boundaries logo.png",
   icon: "/ecofy icon.png",
@@ -238,7 +238,7 @@ export const services: Service[] = [
 ];
 
 export const about: About = {
-  title: "Ecofy Solutions Ltd",
+  title: "Ecofy Africa",
   description:
     "Ecofy is a digital platform designed to eliminate agricultural uncertainty for smallholder farmers in Tanzania, delivering actionable insights tailored to each farmer's specific land and crop conditions.",
   platformTitle: "Ecofy Platform",
@@ -456,12 +456,12 @@ export const contactDetails: ContactDetails = {
   title: "Get in touch with the Ecofy team.",
   description:
     "Whether you are a farmer, field agent, or partner organization, we are here to help you get started with Ecofy.",
-  phone: "(+255) 752 231 143",
-  phoneRaw: "+255752231143",
+  phone: "(+266) 749 498 117",
+  phoneRaw: "+266749498117",
 };
 
 export const footer: FooterData = {
-  kicker: "// ECOFY SOLUTIONS LTD",
+  kicker: "// ECOFY AFRICA",
   statement: "Predict. Guide. Reward. — for every farmer.",
   navigateLinks: [
     { label: "Home", href: "/" },
@@ -478,10 +478,10 @@ export const footer: FooterData = {
   connectLinks: [
     { label: "Instagram", href: "#" },
     { label: "LinkedIn", href: "#" },
-    { label: "Email", href: "mailto:info@ecofy.co" },
+    { label: "Email", href: "mailto:info@ecofy.co.tz" },
   ],
   copyright:
-    "© Ecofy Solutions Ltd, 2026. All rights reserved. Empowering farmers with digital intelligence.",
+    "© Ecofy Africa, 2026. All rights reserved. Empowering farmers with digital intelligence.",
 };
 
 // ===== INNER PAGE DATA =====
@@ -490,7 +490,7 @@ export const aboutPage: AboutPage = {
   mission:
     "To eliminate agricultural uncertainty for smallholder farmers in Tanzania by combining localized crop data, climate patterns, and market intelligence into actionable, personalized insights.",
   story: [
-    "Ecofy Solutions Ltd was founded with a clear purpose: to give Tanzanian smallholder farmers the information and tools they need to make confident decisions. Too many farmers rely on generic forecasts and guesswork, leading to wasted resources and missed opportunities.",
+    "Ecofy Africa was founded with a clear purpose: to give Tanzanian smallholder farmers the information and tools they need to make confident decisions. Too many farmers rely on generic forecasts and guesswork, leading to wasted resources and missed opportunities.",
     "We built Ecofy as a digital platform that combines localized crop data, climate patterns, and market intelligence — tailored to each farmer's specific land and crop conditions. Rather than offering broad advice, Ecofy delivers actionable insights that change how farmers plan, grow, and sell.",
     "From planting through to harvest, farmers are guided through structured milestones and tasks. Upon completing each milestone, farmers earn experience points (XP) that unlock real-world benefits, creating a dual incentive of improved farming outcomes and tangible rewards.",
   ],

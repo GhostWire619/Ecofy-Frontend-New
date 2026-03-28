@@ -8,7 +8,7 @@ import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import ProductHighlights from "@/components/sections/ProductHighlights";
 import PartnersSection from "@/components/sections/PartnersSection";
 
-export const metadata = { title: "About Us — Ecofy Solutions Ltd" };
+export const metadata = { title: "About Us — Ecofy Africa" };
 
 export default function AboutUsPage() {
   return (

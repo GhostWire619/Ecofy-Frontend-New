@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ecofy Solutions Ltd | Farm Intelligence Platform",
+  title: "Ecofy Africa | Farm Intelligence Platform",
   description:
     "Predict. Guide. Reward. Ecofy eliminates agricultural uncertainty for smallholder farmers in Tanzania with localized crop data, climate patterns, and market intelligence.",
   keywords:

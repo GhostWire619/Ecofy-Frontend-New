@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import PageBanner from "@/components/layout/PageBanner";
 import ContactSection from "@/components/sections/ContactSection";
 
-export const metadata = { title: "Contact — Ecofy Solutions Ltd" };
+export const metadata = { title: "Contact — Ecofy Africa" };
 
 export default function ContactPage() {
   return (

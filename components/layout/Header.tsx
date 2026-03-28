@@ -38,9 +38,9 @@ export default function Header({ navigation }: HeaderProps) {
   return (
     <>
       <header
-        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 rounded-2xl ${
+        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "!left-2 !right-2 sm:!left-8 sm:!right-8 backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
+            ? "left-3 right-3 sm:left-6 sm:right-6 rounded-2xl backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
             : "border border-transparent"
         }`}
       >
@@ -50,14 +50,14 @@ export default function Header({ navigation }: HeaderProps) {
               isScrolled ? "h-14" : "h-20"
             }`}
           >
-            {/* Brand — left on mobile, left on desktop */}
-            <a className="flex items-center gap-3 no-underline" href="/">
+            {/* Brand */}
+            <a className="flex items-center gap-3 no-underline shrink-0" href="/">
               <Image
                 src={navigation.logo}
                 alt={navigation.name}
-                width={700}
-                height={200}
-                className="h-40 w-auto sm:h-45"
+                width={180}
+                height={50}
+                className="h-10 w-auto md:h-12"
                 priority
               />
             </a>
@@ -142,7 +142,7 @@ export default function Header({ navigation }: HeaderProps) {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="flex md:hidden flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg"
+              className="flex md:hidden flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg shrink-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
@@ -174,10 +174,10 @@ export default function Header({ navigation }: HeaderProps) {
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
-        style={{ paddingTop: "96px" }}
+        style={{ paddingTop: "80px" }}
         aria-label="Mobile navigation"
       >
-        <div className="flex flex-col gap-1 px-6 py-4">
+        <div className="flex flex-col gap-1 px-4 py-4 overflow-y-auto" style={{ maxHeight: "calc(100vh - 80px)" }}>
           {navigation.links.map((item) => (
             <a
               key={item.label}
