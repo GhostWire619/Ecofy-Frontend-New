@@ -18,7 +18,7 @@ export default function ContactPage() {
           title="Get in touch with the Ecofy team"
           subtitle="Whether you are a farmer, field agent, or partner organization, we are here to help."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
-          backgroundImage="/uploads/2021/03/get-a-quote-home-1-bg.jpg"
+          backgroundImage="/images/banners/contact-banner.jpg"
         />
         <ContactSection services={services} contactDetails={contactDetails} />
       </main>

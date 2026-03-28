@@ -55,9 +55,9 @@ export default function Header({ navigation }: HeaderProps) {
               <Image
                 src={navigation.logo}
                 alt={navigation.name}
-                width={140}
-                height={40}
-                className="h-8 w-auto sm:h-9"
+                width={700}
+                height={200}
+                className="h-40 w-auto sm:h-45"
                 priority
               />
             </a>
