@@ -18,7 +18,7 @@ export default function BlogLeftSidebarPage() {
             { label: "Home", href: "/" },
             { label: "Blog" },
           ]}
-          backgroundImage="/images/banners/blog-banner.jpg"
+          backgroundImage="/uploads/2023/03/Picture3.jpg"
         />
         <section className="py-0 pb-20 lg:pb-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">

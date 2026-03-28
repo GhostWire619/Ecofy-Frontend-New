@@ -40,18 +40,18 @@ export default function Header({ navigation }: HeaderProps) {
       <header
         className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 rounded-2xl ${
           isScrolled
-            ? "!left-8 !right-8 backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
+            ? "!left-2 !right-2 sm:!left-8 sm:!right-8 backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
             : "border border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6">
           <div
             className={`flex items-center justify-between transition-all duration-300 ${
               isScrolled ? "h-14" : "h-20"
             }`}
           >
-            {/* Brand — logo centered on mobile */}
-            <a className="flex items-center gap-3 no-underline md:flex-none absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0" href="/">
+            {/* Brand — left on mobile, left on desktop */}
+            <a className="flex items-center gap-3 no-underline" href="/">
               <Image
                 src={navigation.logo}
                 alt={navigation.name}
@@ -97,45 +97,23 @@ export default function Header({ navigation }: HeaderProps) {
                 </button>
 
                 <div
-                  className={`absolute top-full right-0 mt-2 w-[520px] rounded-2xl border border-[#1f2a1f]/10 dark:border-zinc-700/60 bg-[#ffffff] dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
+                  className={`absolute top-full right-0 mt-2 w-56 rounded-xl border border-[#1f2a1f]/10 dark:border-zinc-700/60 bg-[#ffffff] dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
                     isSolutionsOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
                   }`}
                 >
-                  <div className="p-5 border-b border-[#1f2a1f]/8 dark:border-zinc-800">
-                    <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-1">
-                      Platform solutions
-                    </p>
-                    <h3 className="text-base font-semibold text-[#1f2a1f] dark:text-zinc-100">
-                      Tools built for the field
-                    </h3>
-                    <span className="text-sm text-[#5f695d] dark:text-zinc-400">
-                      Explore the core products powering Ecofy&apos;s digital ecosystem.
-                    </span>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2 p-3">
+                  <div className="py-2">
                     {navigation.solutions.map((item) => (
                       <a
                         key={item.title}
-                        className="flex flex-col gap-1 p-3 rounded-xl hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
+                        className="block px-4 py-2.5 text-[13px] font-medium text-[#3d4a3d] dark:text-zinc-300 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
                         href={item.href}
                       >
-                        <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-100">
-                          {item.title}
-                        </strong>
-                        <span className="text-xs text-[#5f695d] dark:text-zinc-400 leading-relaxed">
-                          {item.description}
-                        </span>
+                        {item.title}
                       </a>
                     ))}
                   </div>
-                  <a
-                    className="block text-center py-3 text-xs font-medium text-[#5f695d] hover:text-[#1f2a1f] dark:hover:text-white border-t border-[#1f2a1f]/8 dark:border-zinc-800 no-underline transition-colors"
-                    href="/how-we-help-clients"
-                  >
-                    View all solutions
-                  </a>
                 </div>
               </div>
 

@@ -163,7 +163,7 @@ export const navigation: Navigation = {
   ],
   solutions: [
     {
-      title: "Ecofy One",
+      title: "Ecofy",
       href: "/how-we-help-clients",
       description:
         "The complete platform combining Predict, Guide, and Reward — built for Tanzanian smallholder farmers.",
@@ -195,7 +195,7 @@ export const heroSlides: HeroSlide[] = [
     title: "Eliminate uncertainty for smallholder farmers in Tanzania",
     description:
       "Ecofy walks you through your entire crop season — from choosing what to plant, to daily tasks, to selling your harvest. Powered by local weather data, soil analysis, and AI guidance.",
-    image: "/images/hero/hero-main.png",
+    image: "/uploads/2023/03/1-1.png",
     primary: { label: "Explore how it works", href: "/how-we-help-clients" },
     secondary: { label: "About us", href: "/about-us" },
   },
@@ -204,7 +204,7 @@ export const heroSlides: HeroSlide[] = [
     title: "Structured milestones that turn good farming into real rewards",
     description:
       "From planting through harvest, farmers follow guided tasks and earn experience points (XP) that unlock real-world benefits like inputs, financing, and market access.",
-    image: "/images/hero/hero-accent.png",
+    image: "/uploads/2023/03/2.png",
     primary: { label: "See capabilities", href: "/how-we-help-clients" },
     secondary: { label: "Contact us", href: "/contact" },
   },
@@ -244,7 +244,7 @@ export const about: About = {
   platformTitle: "Ecofy Platform",
   platformDescription:
     "Ecofy delivers climate forecasting, guided milestones from planting to harvest, and a gamified reward system that turns good farming practices into real-world benefits.",
-  image: "/images/about/about-team.png",
+  image: "/uploads/2023/03/gerolds.png",
   href: "/about-us",
 };
 
@@ -284,31 +284,31 @@ export const appScreens: AppScreen[] = [
     title: "Dashboard",
     description:
       "See your farm overview — weather, active tasks, crop health, and XP progress all in one place.",
-    image: "/images/hero/hero-main.png",
+    image: "/uploads/2023/03/1-1.png",
   },
   {
     title: "Tasks",
     description:
       "Daily and weekly farming tasks tailored to your crop stage, with clear instructions and reminders.",
-    image: "/images/app-screens/tasks.webp",
+    image: "/uploads/2023/03/corn-vs-maize-01.webp",
   },
   {
     title: "AI Chat",
     description:
       "Ask any farming question and get instant, personalized answers powered by agronomic AI.",
-    image: "/images/app-screens/tasks.webp",
+    image: "/uploads/2023/03/corn-vs-maize-01.webp",
   },
   {
     title: "Milestones",
     description:
       "Track your crop journey from planting to harvest with structured weekly milestones and progress indicators.",
-    image: "/images/app-screens/milestones.png",
+    image: "/uploads/2021/03/5.png",
   },
   {
     title: "Rewards",
     description:
       "Earn XP, level up, and unlock real-world benefits for completing tasks and hitting milestones.",
-    image: "/images/hero/hero-accent.png",
+    image: "/uploads/2023/03/2.png",
   },
 ];
 
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     year: "2026",
     description:
       "A modern case-study format showing how Ecofy maps complex value chains with clarity and actionable insight.",
-    image: "/images/projects/value-chain-mapping.png",
+    image: "/uploads/2021/03/1-370x330.png",
     href: "/project/project1",
     outcome: "Clearer operational visibility",
     tags: ["Research", "Workflows", "Rural Systems"],
@@ -341,7 +341,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "A concept for showcasing how buyers, aggregators, and distribution partners can move through a coordinated digital journey instead of disconnected touchpoints.",
-    image: "/images/projects/market-access.png",
+    image: "/uploads/2021/03/2-370x330.png",
     href: "/project/project2",
     outcome: "Stronger partner coordination",
     tags: ["Cross-border", "Trade", "Partner Tools"],
@@ -353,7 +353,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "A premium project card for the farmer onboarding story, emphasizing trust, legibility, and structured progression for registration and KYC-led flows.",
-    image: "/images/projects/farmer-enrollment.png",
+    image: "/uploads/2021/03/3-370x330.png",
     href: "/project/project3",
     outcome: "Faster onboarding journeys",
     tags: ["KYC", "Enrollment", "Farmer Profiles"],
@@ -365,7 +365,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "A showcase for communication systems, using a cleaner interface language to express field messaging, alerts, and extension coordination.",
-    image: "/images/projects/extension-outreach.png",
+    image: "/uploads/2021/03/4-370x330.png",
     href: "/project/project4",
     outcome: "Better last-mile communication",
     tags: ["SMS", "Alerts", "Extension"],
@@ -377,7 +377,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "An interface direction for dealer operations and inventory management, where transaction-heavy systems still feel modern and confidence-building.",
-    image: "/images/projects/inventory-agent-hub.png",
+    image: "/uploads/2021/03/5-370x330.png",
     href: "/project/project5",
     outcome: "Cleaner stock visibility",
     tags: ["Inventory", "Agents", "Payments"],
@@ -389,7 +389,7 @@ export const projects: Project[] = [
     year: "2023",
     description:
       "A visual concept for presenting distribution and fulfillment projects through a more cinematic product-story format rather than a plain gallery.",
-    image: "/images/projects/distribution-command.png",
+    image: "/uploads/2021/03/7-370x330.png",
     href: "/project/project6",
     outcome: "Sharper distribution oversight",
     tags: ["Logistics", "Distribution", "Insights"],
@@ -412,14 +412,14 @@ export const betaCta: BetaCTA = {
 };
 
 export const partners: Partner[] = [
-  { name: "Azania Bank", logo: "/images/partners/azania-bank.png" },
-  { name: "Finca Microfinance Bank Ltd", logo: "/images/partners/finca-microfinance.png" },
-  { name: "Amana Bank", logo: "/images/partners/amana-bank.png" },
-  { name: "Visa", logo: "/images/partners/visa.png" },
-  { name: "Government of Tanzania", logo: "/images/partners/govt-tanzania.png" },
-  { name: "Alliance Ginneries Limited", logo: "/images/partners/alliance-ginneries.png" },
-  { name: "United Nations Capital Development Fund", logo: "/images/partners/uncdf.png" },
-  { name: "Sahara Ventures", logo: "/images/partners/sahara-ventures.png" },
+  { name: "Azania Bank", logo: "/uploads/2023/03/azania.png" },
+  { name: "Finca Microfinance Bank Ltd", logo: "/uploads/2023/03/admin-ajax.png" },
+  { name: "Amana Bank", logo: "/uploads/2023/03/amana.png" },
+  { name: "Visa", logo: "/uploads/2023/03/visa.png" },
+  { name: "Government of Tanzania", logo: "/uploads/2023/03/tz.png" },
+  { name: "Alliance Ginneries Limited", logo: "/uploads/2023/03/nn.png" },
+  { name: "United Nations Capital Development Fund", logo: "/uploads/2023/03/un-1.png" },
+  { name: "Sahara Ventures", logo: "/uploads/2023/03/cv.png" },
 ];
 
 export const posts: Post[] = [
@@ -427,7 +427,7 @@ export const posts: Post[] = [
     title: "Ecofy combines proprietary market outlooks",
     category: "AgriTech",
     date: "February 22, 2023",
-    image: "/images/blog/market-outlooks.png",
+    image: "/uploads/2023/02/1d-360x250.png",
     href: "/kilimo-maendeleo",
     excerpt:
       "A closer look at how Ecofy uses market intelligence and digital systems to support stronger farm decisions.",
@@ -436,7 +436,7 @@ export const posts: Post[] = [
     title: "Ecofy Center for Agricultural Transformation",
     category: "Field Intelligence",
     date: "February 22, 2023",
-    image: "/images/blog/agri-transformation.png",
+    image: "/uploads/2023/02/ng-360x250.png",
     href: "/kme-center-for-agricultural-transformation",
     excerpt:
       "How the center advances transformation through practical support, innovation, and coordination for agricultural stakeholders.",
@@ -445,7 +445,7 @@ export const posts: Post[] = [
     title: "Natural Capital and Nature",
     category: "AgriTech",
     date: "September 4, 2020",
-    image: "/images/blog/natural-capital.png",
+    image: "/uploads/2020/09/3-360x250.png",
     href: "/natural-capital-and-nature",
     excerpt:
       "An older perspective piece on natural capital, sustainability, and long-term value creation in rural economies.",
@@ -556,7 +556,7 @@ export const capabilities: Capability[] = [
       "Risk assessment before committing resources to a planting season",
       "Alerts for weather events that could impact your crops",
     ],
-    image: "/images/capabilities/predict.webp",
+    image: "/uploads/2023/03/corn-vs-maize-01.webp",
   },
   {
     id: "guide",
@@ -571,7 +571,7 @@ export const capabilities: Capability[] = [
       "Best practice recommendations based on your crop and conditions",
       "Progress tracking so you always know where you stand",
     ],
-    image: "/images/capabilities/guide.png",
+    image: "/uploads/2023/03/1-1.png",
   },
   {
     id: "reward",
@@ -586,7 +586,7 @@ export const capabilities: Capability[] = [
       "Connect with verified offtakers through your earned reputation",
       "Access financing products tied to your verified farming performance",
     ],
-    image: "/images/capabilities/reward.png",
+    image: "/uploads/2021/03/5.png",
   },
 ];
 

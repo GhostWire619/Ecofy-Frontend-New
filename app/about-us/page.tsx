@@ -22,7 +22,7 @@ export default function AboutUsPage() {
           title="Eliminating agricultural uncertainty for smallholder farmers"
           subtitle="Ecofy combines localized crop data, climate patterns, and market intelligence into actionable, personalized insights."
           breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
-          backgroundImage="/images/banners/about-banner.webp"
+          backgroundImage="/uploads/2023/03/corn-vs-maize-01.webp"
         />
 
         {/* Mission & Story */}
@@ -33,7 +33,7 @@ export default function AboutUsPage() {
               <AnimatedSection animation="fade-right">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                   <Image
-                    src="/images/about/about-team.png"
+                    src="/uploads/2023/03/gerolds.png"
                     alt="Ecofy team in the field"
                     fill
                     className="object-cover"

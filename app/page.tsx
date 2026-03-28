@@ -16,7 +16,6 @@ import Header from "@/components/layout/Header";
 import TopBar from "@/components/layout/TopBar";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import ServiceGrid from "@/components/sections/ServiceGrid";
 import PillarsSection from "@/components/sections/PillarsSection";
 import AppWalkthrough from "@/components/sections/AppWalkthrough";
 import ProductHighlights from "@/components/sections/ProductHighlights";
@@ -36,7 +35,6 @@ export default function HomePage() {
         <div className="bg-gradient-to-b from-[#eae8e5] to-white dark:from-[#09090b] dark:to-[#09090b]">
           <PartnersSection partners={partners} />
         </div>
-        <ServiceGrid services={services} />
         <PillarsSection pillars={pillars} cta={cta} />
         <AppWalkthrough screens={appScreens} />
         <ProductHighlights highlights={productHighlights} />

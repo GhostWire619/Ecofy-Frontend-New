@@ -18,7 +18,7 @@ export default function OurTeamPage() {
             { label: "Home", href: "/" },
             { label: "Our Team" },
           ]}
-          backgroundImage="/images/banners/team-banner.png"
+          backgroundImage="/uploads/2023/03/gerolds.png"
         />
 
         <section className="py-20 lg:py-28">
