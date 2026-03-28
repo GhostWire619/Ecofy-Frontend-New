@@ -38,7 +38,7 @@ export default function Header({ navigation }: HeaderProps) {
   return (
     <>
       <header
-        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 overflow-hidden ${
           isScrolled
             ? "left-3 right-3 sm:left-6 sm:right-6 rounded-2xl backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
             : "border border-transparent"
