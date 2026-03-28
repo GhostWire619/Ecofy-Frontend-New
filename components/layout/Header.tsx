@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import type { Navigation } from "@/lib/site-data";
 
 interface HeaderProps {
@@ -49,19 +50,16 @@ export default function Header({ navigation }: HeaderProps) {
               isScrolled ? "h-14" : "h-20"
             }`}
           >
-            {/* Brand */}
-            <a className="flex items-center gap-3 no-underline" href="/">
-              <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 text-sm font-bold">
-                E
-              </span>
-              <div className="hidden sm:flex flex-col">
-                <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-100 leading-tight">
-                  {navigation.name}
-                </strong>
-                <span className="text-[11px] text-[#5f695d] dark:text-zinc-400 leading-tight">
-                  {navigation.subtitle}
-                </span>
-              </div>
+            {/* Brand — logo centered on mobile */}
+            <a className="flex items-center gap-3 no-underline md:flex-none absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0" href="/">
+              <Image
+                src={navigation.logo}
+                alt={navigation.name}
+                width={140}
+                height={40}
+                className="h-8 w-auto sm:h-9"
+                priority
+              />
             </a>
 
             {/* Desktop Nav */}

@@ -18,6 +18,7 @@ export interface Navigation {
   name: string;
   subtitle: string;
   logo: string;
+  icon: string;
   cta: NavLink;
   links: NavLink[];
   solutions: Solution[];
@@ -149,7 +150,8 @@ export const navigation: Navigation = {
   phoneRaw: "+255752231143",
   name: "Ecofy Solutions Ltd",
   subtitle: "Farm Intelligence Platform",
-  logo: "/uploads/2023/03/logo-dark2.png",
+  logo: "/ecoo full with text no boundaries logo.png",
+  icon: "/ecofy icon.png",
   cta: { label: "Register Now", href: "/register" },
   links: [
     { label: "Home", href: "/" },
@@ -192,7 +194,7 @@ export const heroSlides: HeroSlide[] = [
     eyebrow: "Predict · Guide · Reward",
     title: "Eliminate uncertainty for smallholder farmers in Tanzania",
     description:
-      "Ecofy combines localized crop data, climate patterns, and market intelligence to deliver actionable insights tailored to each farmer's specific land and crop conditions.",
+      "Ecofy walks you through your entire crop season — from choosing what to plant, to daily tasks, to selling your harvest. Powered by local weather data, soil analysis, and AI guidance.",
     image: "/uploads/2023/03/1-1.png",
     primary: { label: "Explore how it works", href: "/how-we-help-clients" },
     secondary: { label: "About us", href: "/about-us" },
@@ -250,17 +252,17 @@ export const pillars: Pillar[] = [
   {
     title: "Predict",
     description:
-      "Climate and crop price forecasting enables farmers to plan ahead before committing to a season, turning uncertainty into informed decisions.",
+      "Get real-time weather forecasts and AI-powered crop recommendations based on your farm's location, soil type, and season.",
   },
   {
     title: "Guide",
     description:
-      "An AI assistant and structured milestone system supports farmers through every decision from planting to final sale.",
+      "Follow a structured crop journey with weekly milestones, daily tasks, and an AI assistant that answers your farming questions anytime.",
   },
   {
     title: "Reward",
     description:
-      "Sound farming practices earn experience points (XP) that unlock real-world benefits like inputs, financing, and premium market access.",
+      "Earn XP for completing tasks and hitting milestones. Track your progress, level up from Seed Starter to Farming Legend, and maintain your daily streak.",
   },
 ];
 
@@ -271,38 +273,52 @@ export const cta: CTA = {
   href: "/contact",
 };
 
-export const advisoryAreas: AdvisoryArea[] = [
+export interface AppScreen {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export const appScreens: AppScreen[] = [
   {
-    title: "Farmer Profiling",
+    title: "Dashboard",
     description:
-      "Register your land, crops, and conditions. Ecofy builds a personalized profile to tailor every recommendation to your specific situation.",
-    image: "/uploads/2023/03/corn-vs-maize-01.webp",
-  },
-  {
-    title: "Seasonal Planning",
-    description:
-      "Get climate and price forecasts before you plant. Predict tools help you choose the right crops and timing for maximum returns.",
+      "See your farm overview — weather, active tasks, crop health, and XP progress all in one place.",
     image: "/uploads/2023/03/1-1.png",
   },
   {
-    title: "Guided Milestones",
+    title: "Tasks",
     description:
-      "Follow structured tasks from planting through harvest. The Guide AI assistant helps you make smart decisions at every step along the way.",
+      "Daily and weekly farming tasks tailored to your crop stage, with clear instructions and reminders.",
     image: "/uploads/2023/03/corn-vs-maize-01.webp",
   },
   {
-    title: "Rewards & Market Access",
+    title: "AI Chat",
     description:
-      "Earn XP for completing milestones. Accumulated points unlock inputs, financing, and connections to verified offtakers and premium markets.",
+      "Ask any farming question and get instant, personalized answers powered by agronomic AI.",
+    image: "/uploads/2023/03/corn-vs-maize-01.webp",
+  },
+  {
+    title: "Milestones",
+    description:
+      "Track your crop journey from planting to harvest with structured weekly milestones and progress indicators.",
     image: "/uploads/2021/03/5.png",
+  },
+  {
+    title: "Rewards",
+    description:
+      "Earn XP, level up, and unlock real-world benefits for completing tasks and hitting milestones.",
+    image: "/uploads/2023/03/2.png",
   },
 ];
 
-export const stats: Stat[] = [
-  { value: "83,000", label: "Profiled Farmers" },
-  { value: "630+", label: "Active Mobilizers" },
-  { value: "150", label: "Profiled Input Providers" },
-  { value: "230+", label: "Profiled Offtakers" },
+export const productHighlights: string[] = [
+  "Track weather",
+  "AI crop advice",
+  "Weekly milestones",
+  "Field data collection",
+  "XP & leveling",
+  "Market intelligence",
 ];
 
 export const projects: Project[] = [
@@ -380,29 +396,20 @@ export const projects: Project[] = [
   },
 ];
 
-export const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Ecofy's Predict tools helped me choose the right crops for the season. I planned my planting with real climate data instead of guessing, and my yields improved significantly.",
-    name: "Gerold Msemwa",
-    location: "Dar es Salaam, Tanzania",
-    image: "/uploads/2023/03/gero-round.png",
-  },
-  {
-    quote:
-      "The guided milestones kept me on track from planting to harvest. Every step was clear, and the XP I earned helped me access better inputs for the next season.",
-    name: "Maria Shirima",
-    location: "Mtwara, Tanzania",
-    image: "/uploads/2023/03/Picture3.jpg",
-  },
-  {
-    quote:
-      "Ecofy's market intelligence showed me exactly when and where to sell. The reward points I earned unlocked financing I couldn't access before.",
-    name: "Amina Kweka",
-    location: "Morogoro, Tanzania",
-    image: "/uploads/2023/03/Picture4.jpg",
-  },
-];
+export interface BetaCTA {
+  title: string;
+  description: string;
+  buttonLabel: string;
+  href: string;
+}
+
+export const betaCta: BetaCTA = {
+  title: "Join the Ecofy Beta",
+  description:
+    "Be among the first farmers to experience AI-powered crop guidance, real-time weather insights, and gamified farming rewards. Sign up now to get early access.",
+  buttonLabel: "Join the Beta",
+  href: "/register",
+};
 
 export const partners: Partner[] = [
   { name: "Azania Bank", logo: "/uploads/2023/03/azania.png" },
@@ -513,25 +520,25 @@ export const teamMembers: TeamMember[] = [
     name: "Mathew Ngwahi",
     role: "CEO & Founder",
     bio: "BA, MA Development Management. Managing director in charge of corporate strategy with 15 years of experience in agribusiness and rural development project design and implementation.",
-    image: "/uploads/2023/03/round-1.png",
+    image: "/team/CEO.jpeg",
   },
   {
     name: "Maria Shirima",
-    role: "Senior Manager",
+    role: "COO",
     bio: "BA, MA Community & Social Work. 8 years of experience in community development, rural development work, and gender mainstreaming in agricultural value chains.",
-    image: "/uploads/2023/03/Picture3.jpg",
+    image: "/team/COO.png",
   },
   {
     name: "Hussein Haule",
-    role: "Technical Director",
+    role: "CTO",
     bio: "B.Sc. Computer Science. Technical Director in charge of the Ecofy platform, with 13 years of experience in software development and systems architecture.",
-    image: "/uploads/2023/03/Picture4.jpg",
+    image: "/team/CTO.jpg",
   },
   {
     name: "Gerold Msemwa",
-    role: "Director of Finance",
+    role: "CMO",
     bio: "BBA Finance & Accounting. Director of business development with 10 years of experience in finance, investment, agriculture lending, and rural business development.",
-    image: "/uploads/2023/03/gero-round.png",
+    image: "/team/CMO.jpeg",
   },
 ];
 

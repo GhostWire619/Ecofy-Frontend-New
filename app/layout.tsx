@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     "Predict. Guide. Reward. Ecofy eliminates agricultural uncertainty for smallholder farmers in Tanzania with localized crop data, climate patterns, and market intelligence.",
   keywords:
     "agriculture, farming, agritech, Tanzania, Africa, farm intelligence, market access, smallholder farmers",
+  icons: {
+    icon: "/ecofy icon.png",
+    apple: "/ecofy icon.png",
+  },
 };
 
 export const viewport: Viewport = {

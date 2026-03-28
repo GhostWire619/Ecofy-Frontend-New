@@ -2,14 +2,14 @@ import {
   navigation,
   footer,
   capabilities,
-  stats,
+  productHighlights,
 } from "@/lib/site-data";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageBanner from "@/components/layout/PageBanner";
 import CapabilitySection from "@/components/sections/CapabilitySection";
-import StatsSection from "@/components/sections/StatsSection";
+import ProductHighlights from "@/components/sections/ProductHighlights";
 
 export default function HowWeHelpClientsPage() {
   return (
@@ -32,7 +32,7 @@ export default function HowWeHelpClientsPage() {
         <CapabilitySection capability={capabilities[1]} reversed />
         <CapabilitySection capability={capabilities[2]} />
 
-        <StatsSection stats={stats} />
+        <ProductHighlights highlights={productHighlights} />
 
         {/* CTA */}
         <section className="pb-20 lg:pb-28">

@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { navigation, footer, aboutPage, stats, partners } from "@/lib/site-data";
+import { navigation, footer, aboutPage, productHighlights, partners } from "@/lib/site-data";
 import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageBanner from "@/components/layout/PageBanner";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
-import StatsSection from "@/components/sections/StatsSection";
+import ProductHighlights from "@/components/sections/ProductHighlights";
 import PartnersSection from "@/components/sections/PartnersSection";
 
 export const metadata = { title: "About Us — Ecofy Solutions Ltd" };
@@ -111,8 +111,8 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Stats */}
-        <StatsSection stats={stats} />
+        {/* Product Highlights */}
+        <ProductHighlights highlights={productHighlights} />
 
         {/* Partners */}
         <PartnersSection partners={partners} />

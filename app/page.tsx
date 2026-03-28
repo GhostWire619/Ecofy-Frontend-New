@@ -1,5 +1,6 @@
 import {
-  advisoryAreas,
+  appScreens,
+  betaCta,
   contactDetails,
   cta,
   footer,
@@ -8,9 +9,8 @@ import {
   partners,
   pillars,
   posts,
+  productHighlights,
   services,
-  stats,
-  testimonials,
 } from "@/lib/site-data";
 import Header from "@/components/layout/Header";
 import TopBar from "@/components/layout/TopBar";
@@ -18,9 +18,9 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import ServiceGrid from "@/components/sections/ServiceGrid";
 import PillarsSection from "@/components/sections/PillarsSection";
-import AdvisoryTabs from "@/components/sections/AdvisoryTabs";
-import StatsSection from "@/components/sections/StatsSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import AppWalkthrough from "@/components/sections/AppWalkthrough";
+import ProductHighlights from "@/components/sections/ProductHighlights";
+import JoinBetaSection from "@/components/sections/JoinBetaSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import NewsSection from "@/components/sections/NewsSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -38,9 +38,9 @@ export default function HomePage() {
         </div>
         <ServiceGrid services={services} />
         <PillarsSection pillars={pillars} cta={cta} />
-        <AdvisoryTabs areas={advisoryAreas} />
-        <StatsSection stats={stats} />
-        <TestimonialsSection testimonials={testimonials} />
+        <AppWalkthrough screens={appScreens} />
+        <ProductHighlights highlights={productHighlights} />
+        <JoinBetaSection cta={betaCta} />
         <NewsSection posts={posts} />
         <ContactSection services={services} contactDetails={contactDetails} />
       </main>
