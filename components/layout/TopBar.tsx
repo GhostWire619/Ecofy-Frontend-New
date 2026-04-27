@@ -1,17 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-const translations: Record<string, { tagline: string }> = {
-  en: { tagline: "Actionable intelligence for smallholder farmers" },
-  sw: { tagline: "Akili halisi kwa wakulima wadogo" },
-};
+import { useSiteContent, useSiteLanguage } from "@/components/providers/site-language-provider";
 
 export default function TopBar() {
   const [isDark, setIsDark] = useState(false);
-  const [language, setLanguage] = useState("en");
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { locale, setLocale } = useSiteLanguage();
+  const { navigation, ui } = useSiteContent();
+  const topBarCopy = ui.topBar;
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -20,9 +18,6 @@ export default function TopBar() {
       setIsDark(true);
       document.documentElement.classList.add("dark");
     }
-
-    const savedLang = localStorage.getItem("language");
-    if (savedLang) setLanguage(savedLang);
 
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -45,11 +40,9 @@ export default function TopBar() {
     }
   };
 
-  const changeLanguage = (lang: string) => {
-    setLanguage(lang);
+  const changeLanguage = (lang: "en" | "sw") => {
+    setLocale(lang);
     setIsLangOpen(false);
-    localStorage.setItem("language", lang);
-    window.dispatchEvent(new CustomEvent("languageChange", { detail: lang }));
   };
 
   return (
@@ -61,8 +54,8 @@ export default function TopBar() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full flex items-center justify-between">
-        <span className="text-[11px] tracking-wide opacity-70 hidden sm:inline">
-          {translations[language].tagline}
+        <span className="max-w-[28rem] truncate text-[11px] tracking-wide opacity-70 hidden sm:inline">
+          {navigation.tagline}
         </span>
 
         <div className="flex items-center gap-3 ml-auto">
@@ -72,10 +65,10 @@ export default function TopBar() {
               className="flex items-center gap-1.5 px-2 py-1 text-[11px] rounded-md hover:bg-zinc-800 transition-colors"
               onClick={() => setIsLangOpen(!isLangOpen)}
               aria-expanded={isLangOpen}
-              aria-label="Select language"
+              aria-label={topBarCopy.selectLanguageLabel}
             >
               <span className="w-4 h-3 rounded-sm overflow-hidden inline-flex">
-                {language === "en" ? (
+                {locale === "en" ? (
                   <svg viewBox="0 0 640 480" className="w-full h-full">
                     <path fill="#012169" d="M0 0h640v480H0z" />
                     <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
@@ -101,7 +94,7 @@ export default function TopBar() {
                   </svg>
                 )}
               </span>
-              <span>{language === "en" ? "EN" : "SW"}</span>
+              <span>{locale === "en" ? "EN" : "SW"}</span>
               <svg
                 className={`w-3 h-3 transition-transform duration-200 ${isLangOpen ? "rotate-180" : ""}`}
                 viewBox="0 0 24 24"
@@ -117,7 +110,7 @@ export default function TopBar() {
               <div className="absolute top-full right-0 mt-1 w-36 rounded-lg border border-zinc-700 bg-zinc-900 shadow-xl overflow-hidden">
                 <button
                   className={`flex items-center gap-2 w-full px-3 py-2 text-xs hover:bg-zinc-800 transition-colors ${
-                    language === "en" ? "text-white bg-zinc-800" : "text-zinc-400"
+                    locale === "en" ? "text-white bg-zinc-800" : "text-zinc-400"
                   }`}
                   onClick={() => changeLanguage("en")}
                 >
@@ -128,11 +121,11 @@ export default function TopBar() {
                     <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
                     <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z" />
                   </svg>
-                  <span>English</span>
+                  <span>{topBarCopy.englishLabel}</span>
                 </button>
                 <button
                   className={`flex items-center gap-2 w-full px-3 py-2 text-xs hover:bg-zinc-800 transition-colors ${
-                    language === "sw" ? "text-white bg-zinc-800" : "text-zinc-400"
+                    locale === "sw" ? "text-white bg-zinc-800" : "text-zinc-400"
                   }`}
                   onClick={() => changeLanguage("sw")}
                 >
@@ -151,7 +144,7 @@ export default function TopBar() {
                       </g>
                     </g>
                   </svg>
-                  <span>Kiswahili</span>
+                  <span>{topBarCopy.swahiliLabel}</span>
                 </button>
               </div>
             )}
@@ -161,7 +154,7 @@ export default function TopBar() {
           <button
             className="relative w-10 h-5 rounded-full bg-zinc-800 hover:bg-zinc-700 transition-colors"
             onClick={toggleDarkMode}
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={isDark ? topBarCopy.switchToLightLabel : topBarCopy.switchToDarkLabel}
           >
             <span
               className={`absolute top-0.5 w-4 h-4 rounded-full bg-zinc-200 dark:bg-zinc-400 flex items-center justify-center transition-all duration-300 ${

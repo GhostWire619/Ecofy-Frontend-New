@@ -2,6 +2,7 @@
 
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Pillar, CTA } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface PillarsSectionProps {
   pillars: Pillar[];
@@ -9,16 +10,19 @@ interface PillarsSectionProps {
 }
 
 export default function PillarsSection({ pillars, cta }: PillarsSectionProps) {
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.pillarsSection;
+
   return (
     <section className="py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <AnimatedSection animation="fade-up">
           <div className="max-w-2xl mb-16 space-y-4">
             <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-              How it works
+              {sectionCopy.eyebrow}
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1f2a1f] dark:text-white">
-              Three pillars powering every farming decision
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1f2a1f] dark:text-white break-words">
+              {sectionCopy.title}
             </h2>
             <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
               {cta.supportingText}
@@ -39,7 +43,7 @@ export default function PillarsSection({ pillars, cta }: PillarsSectionProps) {
               <span className="text-5xl font-black text-[#c48738]/30 dark:text-zinc-800">
                 0{index + 1}
               </span>
-              <h3 className="text-xl font-bold text-[#1f2a1f] dark:text-white">{pillar.title}</h3>
+              <h3 className="text-xl font-bold text-[#1f2a1f] dark:text-white break-words">{pillar.title}</h3>
               <p className="text-sm text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
                 {pillar.description}
               </p>
@@ -51,15 +55,15 @@ export default function PillarsSection({ pillars, cta }: PillarsSectionProps) {
           <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-2xl border border-[#1f2a1f]/10 dark:border-zinc-800 p-8">
             <div className="space-y-2">
               <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-                Get started
+                {sectionCopy.ctaEyebrow}
               </p>
-              <h3 className="text-xl font-bold text-[#1f2a1f] dark:text-white">{cta.title}</h3>
+              <h3 className="text-xl font-bold text-[#1f2a1f] dark:text-white break-words">{cta.title}</h3>
             </div>
             <a
-              className="inline-flex px-6 py-3 border border-[#1f2a1f]/20 dark:border-zinc-700 rounded-xl font-medium text-[#1f2a1f] dark:text-white hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition no-underline shrink-0"
+              className="inline-flex items-center justify-center px-6 py-3 border border-[#1f2a1f]/20 dark:border-zinc-700 rounded-xl font-medium text-[#1f2a1f] dark:text-white text-center hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition no-underline shrink-0"
               href={cta.href}
             >
-              Learn more &rarr;
+              {sectionCopy.ctaButtonLabel}
             </a>
           </div>
         </AnimatedSection>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { Post } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface BlogListProps {
   posts: Post[];
@@ -11,10 +12,12 @@ interface BlogListProps {
 }
 
 export default function BlogList({ posts, categories }: BlogListProps) {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const { ui } = useSiteContent();
+  const allCategoryLabel = ui.blogList.allCategoryLabel;
+  const [activeCategory, setActiveCategory] = useState(allCategoryLabel);
 
   const filteredPosts =
-    activeCategory === "All"
+    activeCategory === allCategoryLabel
       ? posts
       : posts.filter((post) => post.category === activeCategory);
 
@@ -24,7 +27,7 @@ export default function BlogList({ posts, categories }: BlogListProps) {
       <aside className="sticky top-32 self-start">
         <AnimatedSection animation="fade-right">
           <nav className="flex flex-col gap-1">
-            {["All", ...categories].map((category) => (
+            {[allCategoryLabel, ...categories].map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}

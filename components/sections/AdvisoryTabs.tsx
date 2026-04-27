@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { AdvisoryArea } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface AdvisoryTabsProps {
   areas: AdvisoryArea[];
@@ -12,26 +13,27 @@ interface AdvisoryTabsProps {
 export default function AdvisoryTabs({ areas }: AdvisoryTabsProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeArea = areas[activeIndex];
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.advisoryTabs;
 
   return (
     <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6">
       <AnimatedSection animation="fade-up">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-            Advisory studio
+            {sectionCopy.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white">
-            Navigate advisory capabilities like a product console
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white break-words">
+            {sectionCopy.title}
           </h2>
           <p className="mt-4 text-[#3d4a3d] dark:text-zinc-400">
-            Switch between domains to preview the outcomes and delivery focus for each advisory
-            stream.
+            {sectionCopy.description}
           </p>
         </div>
       </AnimatedSection>
 
       <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
-        <div className="flex flex-col gap-3" role="tablist" aria-label="Advisory areas">
+        <div className="flex flex-col gap-3" role="tablist" aria-label={sectionCopy.tabListLabel}>
           {areas.map((area, index) => (
             <AnimatedItem key={area.title} index={index} baseDelay={100} animation="fade-right">
               <button
@@ -61,23 +63,21 @@ export default function AdvisoryTabs({ areas }: AdvisoryTabsProps) {
           >
             <div className="p-8 lg:p-10 flex flex-col justify-center">
               <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-                Current focus
+                {sectionCopy.currentFocusLabel}
               </p>
               <h3 className="mt-3 text-2xl font-bold text-[#1f2a1f] dark:text-white">
                 {activeArea.title}
               </h3>
               <p className="mt-3 text-[#3d4a3d] dark:text-zinc-400">{activeArea.description}</p>
               <div className="mt-6 flex flex-wrap gap-2">
-                {["Sector intelligence", "Execution frameworks", "Delivery partnership"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="text-[11px] font-medium tracking-wide uppercase px-3 py-1 rounded-full bg-[#f0f0f0] dark:bg-zinc-800 text-[#3d4a3d] dark:text-zinc-400"
-                    >
-                      {tag}
-                    </span>
-                  )
-                )}
+                {sectionCopy.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[11px] font-medium tracking-wide uppercase px-3 py-1 rounded-full bg-[#f0f0f0] dark:bg-zinc-800 text-[#3d4a3d] dark:text-zinc-400"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
 

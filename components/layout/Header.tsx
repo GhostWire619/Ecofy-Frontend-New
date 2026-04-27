@@ -2,16 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import type { Navigation } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
-interface HeaderProps {
-  navigation: Navigation;
-}
-
-export default function Header({ navigation }: HeaderProps) {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { navigation, ui } = useSiteContent();
+  const headerCopy = ui.header;
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 36);
@@ -63,12 +61,12 @@ export default function Header({ navigation }: HeaderProps) {
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
+            <nav className="hidden md:flex items-center gap-1 min-w-0" aria-label={headerCopy.primaryNavLabel}>
               {navigation.links.slice(0, 3).map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-3 py-2 text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
+                  className="max-w-[7rem] px-3 py-2 text-center leading-tight text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
                 >
                   {item.label}
                 </a>
@@ -86,7 +84,9 @@ export default function Header({ navigation }: HeaderProps) {
                   aria-expanded={isSolutionsOpen}
                   onClick={() => setIsSolutionsOpen((o) => !o)}
                 >
-                  Solutions
+                  <span className="max-w-[6rem] text-center leading-tight whitespace-normal">
+                    {headerCopy.solutionsLabel}
+                  </span>
                   <span
                     className={`text-[10px] transition-transform duration-200 ${
                       isSolutionsOpen ? "rotate-180" : ""
@@ -107,7 +107,7 @@ export default function Header({ navigation }: HeaderProps) {
                     {navigation.solutions.map((item) => (
                       <a
                         key={item.title}
-                        className="block px-4 py-2.5 text-[13px] font-medium text-[#3d4a3d] dark:text-zinc-300 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
+                        className="block px-4 py-2.5 text-[13px] leading-tight font-medium text-[#3d4a3d] dark:text-zinc-300 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
                         href={item.href}
                       >
                         {item.title}
@@ -121,7 +121,7 @@ export default function Header({ navigation }: HeaderProps) {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-3 py-2 text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
+                  className="max-w-[8rem] px-3 py-2 text-center leading-tight text-[13px] font-medium text-[#5f695d] dark:text-zinc-300 hover:text-[#1f2a1f] dark:hover:text-white rounded-lg hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors no-underline"
                 >
                   {item.label}
                 </a>
@@ -130,7 +130,7 @@ export default function Header({ navigation }: HeaderProps) {
 
             {/* CTA Button */}
             <a
-              className={`hidden md:inline-flex px-5 py-2.5 text-[13px] font-medium rounded-xl transition-all no-underline ${
+              className={`hidden md:inline-flex max-w-[10rem] items-center justify-center px-5 py-2.5 text-center leading-tight text-[13px] font-medium rounded-xl transition-all no-underline ${
                 isScrolled
                   ? "bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 hover:opacity-90"
                   : "bg-white/90 dark:bg-zinc-800 text-[#1f2a1f] dark:text-zinc-100 hover:bg-white dark:hover:bg-zinc-700"
@@ -144,7 +144,7 @@ export default function Header({ navigation }: HeaderProps) {
             <button
               className="flex md:hidden flex-col justify-center items-center gap-1.5 w-10 h-10 rounded-lg shrink-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-label={isMobileMenuOpen ? headerCopy.closeMenuLabel : headerCopy.openMenuLabel}
               aria-expanded={isMobileMenuOpen}
             >
               <span
@@ -175,7 +175,7 @@ export default function Header({ navigation }: HeaderProps) {
             : "opacity-0 pointer-events-none"
         }`}
         style={{ paddingTop: "80px" }}
-        aria-label="Mobile navigation"
+        aria-label={headerCopy.mobileNavLabel}
       >
         <div className="flex flex-col gap-1 px-4 py-4 overflow-y-auto" style={{ maxHeight: "calc(100vh - 80px)" }}>
           {navigation.links.map((item) => (
@@ -183,7 +183,7 @@ export default function Header({ navigation }: HeaderProps) {
               key={item.label}
               href={item.href}
               onClick={handleMobileNavClick}
-              className="px-4 py-3 text-lg font-medium text-[#3d4a3d] dark:text-zinc-200 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
+              className="px-4 py-3 text-lg leading-tight font-medium text-[#3d4a3d] dark:text-zinc-200 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
             >
               {item.label}
             </a>
@@ -194,7 +194,7 @@ export default function Header({ navigation }: HeaderProps) {
               key={item.title}
               href={item.href}
               onClick={handleMobileNavClick}
-              className="px-4 py-2 text-sm text-[#5f695d] dark:text-zinc-400 hover:text-[#1f2a1f] dark:hover:text-white hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
+              className="px-4 py-2 text-sm leading-tight text-[#5f695d] dark:text-zinc-400 hover:text-[#1f2a1f] dark:hover:text-white hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 rounded-xl transition-colors no-underline"
             >
               {item.title}
             </a>
@@ -202,7 +202,7 @@ export default function Header({ navigation }: HeaderProps) {
         </div>
         <div className="px-6 mt-4">
           <a
-            className="block w-full text-center px-6 py-3 bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 font-medium rounded-xl hover:opacity-90 transition-opacity no-underline"
+            className="block w-full px-6 py-3 bg-[#1f2a1f] dark:bg-white text-[#ffffff] dark:text-zinc-900 text-center font-medium rounded-xl hover:opacity-90 transition-opacity no-underline"
             href={navigation.cta.href}
             onClick={handleMobileNavClick}
           >

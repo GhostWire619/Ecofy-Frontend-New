@@ -34,7 +34,7 @@ export default function PageBanner({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <AnimatedSection animation="fade-up">
           {breadcrumbs && (
-            <nav className={`flex items-center gap-2 text-sm mb-4 ${backgroundImage ? 'text-white/70' : 'text-[#4d6b2f] dark:text-indigo-400'}`}>
+            <nav className={`flex flex-wrap items-center gap-2 text-sm mb-4 ${backgroundImage ? 'text-white/70' : 'text-[#4d6b2f] dark:text-indigo-400'}`}>
               {breadcrumbs.map((crumb, i) => (
                 <span key={i} className="flex items-center gap-2">
                   {crumb.href ? (
@@ -61,11 +61,11 @@ export default function PageBanner({
               {eyebrow}
             </p>
           )}
-          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight ${backgroundImage ? 'text-white' : 'text-[#1f2a1f] dark:text-zinc-100'}`}>
+          <h1 className={`max-w-4xl break-words text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight ${backgroundImage ? 'text-white' : 'text-[#1f2a1f] dark:text-zinc-100'}`}>
             {title}
           </h1>
           {subtitle && (
-            <p className={`mt-4 text-lg max-w-2xl ${backgroundImage ? 'text-white/80' : 'text-[#3d4a3d] dark:text-zinc-400'}`}>
+            <p className={`mt-4 text-lg max-w-2xl break-words ${backgroundImage ? 'text-white/80' : 'text-[#3d4a3d] dark:text-zinc-400'}`}>
               {subtitle}
             </p>
           )}

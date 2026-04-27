@@ -2,21 +2,25 @@
 
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import type { Stat } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface StatsSectionProps {
   stats: Stat[];
 }
 
 export default function StatsSection({ stats }: StatsSectionProps) {
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.statsSection;
+
   return (
     <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6">
       <AnimatedSection animation="fade-up">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-            Impact metrics
+            {sectionCopy.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white">
-            Field outcomes across enrollment, distribution, and partner operations
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white break-words">
+            {sectionCopy.title}
           </h2>
         </div>
       </AnimatedSection>

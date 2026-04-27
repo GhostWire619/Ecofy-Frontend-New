@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { AppScreen } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface AppWalkthroughProps {
   screens: AppScreen[];
@@ -12,25 +13,27 @@ interface AppWalkthroughProps {
 export default function AppWalkthrough({ screens }: AppWalkthroughProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeScreen = screens[activeIndex];
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.appWalkthrough;
 
   return (
     <section className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6">
       <AnimatedSection animation="fade-up">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-            App walkthrough
+            {sectionCopy.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white">
-            See how Ecofy works — from dashboard to rewards
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white break-words">
+            {sectionCopy.title}
           </h2>
           <p className="mt-4 text-[#3d4a3d] dark:text-zinc-400">
-            Follow the farmer journey through each screen of the Ecofy app.
+            {sectionCopy.description}
           </p>
         </div>
       </AnimatedSection>
 
       <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8">
-        <div className="flex flex-col gap-3" role="tablist" aria-label="App screens">
+        <div className="flex flex-col gap-3" role="tablist" aria-label={sectionCopy.tabListLabel}>
           {screens.map((screen, index) => (
             <AnimatedItem key={screen.title} index={index} baseDelay={100} animation="fade-right">
               <button
@@ -45,7 +48,7 @@ export default function AppWalkthrough({ screens }: AppWalkthroughProps) {
                 type="button"
               >
                 <span className="text-xs font-mono text-[#5f695d]">0{index + 1}</span>
-                <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-200">
+                <strong className="min-w-0 text-sm font-semibold text-[#1f2a1f] dark:text-zinc-200 break-words">
                   {screen.title}
                 </strong>
               </button>
@@ -62,7 +65,7 @@ export default function AppWalkthrough({ screens }: AppWalkthroughProps) {
               <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
                 {activeScreen.title}
               </p>
-              <h3 className="mt-3 text-2xl font-bold text-[#1f2a1f] dark:text-white">
+              <h3 className="mt-3 text-2xl font-bold text-[#1f2a1f] dark:text-white break-words">
                 {activeScreen.title}
               </h3>
               <p className="mt-3 text-[#3d4a3d] dark:text-zinc-400">{activeScreen.description}</p>

@@ -1,13 +1,12 @@
 "use client";
 
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
-import type { FooterData } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
-interface FooterProps {
-  footer: FooterData;
-}
+export default function Footer() {
+  const { footer, ui } = useSiteContent();
+  const footerCopy = ui.footer;
 
-export default function Footer({ footer }: FooterProps) {
   return (
     <footer className="border-t border-[#1f2a1f]/8 dark:border-zinc-800/60 bg-[#f0f0f0] dark:bg-zinc-950/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
@@ -25,7 +24,7 @@ export default function Footer({ footer }: FooterProps) {
         <AnimatedItem index={1} baseDelay={100} animation="fade-up">
           <section>
             <h3 className="text-xs font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-4">
-              Navigate
+              {footerCopy.navigateHeading}
             </h3>
             <div className="flex flex-col gap-2.5">
               {footer.navigateLinks.map((item) => (
@@ -44,7 +43,7 @@ export default function Footer({ footer }: FooterProps) {
         <AnimatedItem index={2} baseDelay={100} animation="fade-up">
           <section>
             <h3 className="text-xs font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-4">
-              Resources
+              {footerCopy.resourcesHeading}
             </h3>
             <div className="flex flex-col gap-2.5">
               {footer.resourceLinks.map((item) => (
@@ -63,7 +62,7 @@ export default function Footer({ footer }: FooterProps) {
         <AnimatedItem index={3} baseDelay={100} animation="fade-up">
           <section>
             <h3 className="text-xs font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400 mb-4">
-              Connect
+              {footerCopy.connectHeading}
             </h3>
             <div className="flex flex-col gap-2.5">
               {footer.connectLinks.map((item) => (

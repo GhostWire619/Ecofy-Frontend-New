@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import AnimatedSection, { AnimatedItem } from "@/components/ui/AnimatedSection";
 import type { Project } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -12,6 +13,8 @@ interface ProjectsSectionProps {
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.projectsSection;
 
   return (
     <section className="py-20 lg:py-28">
@@ -19,14 +22,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
         <AnimatedSection animation="fade-up">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-              Case explorer
+              {sectionCopy.eyebrow}
             </p>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white">
-              Experience projects as connected product narratives
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-[#1f2a1f] dark:text-white break-words">
+              {sectionCopy.title}
             </h2>
             <p className="mt-4 text-[#3d4a3d] dark:text-zinc-400">
-              Hover or tap any case to transition the main stage and inspect outcomes, tags,
-              and category context.
+              {sectionCopy.description}
             </p>
           </div>
         </AnimatedSection>
@@ -44,7 +46,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                 />
                 <div className="absolute bottom-4 left-4 bg-[#ffffff] dark:bg-zinc-900/80 border border-[#1f2a1f]/10 dark:border-zinc-800/50 rounded-xl px-4 py-2 shadow-lg">
                   <span className="block text-[11px] font-medium uppercase text-[#4d6b2f] dark:text-indigo-400">
-                    Outcome
+                    {sectionCopy.outcomeLabel}
                   </span>
                   <strong className="text-sm font-semibold text-[#1f2a1f] dark:text-zinc-200">
                     {activeProject.outcome}
@@ -76,13 +78,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium border border-[#1f2a1f]/15 dark:border-zinc-700 text-[#3d4a3d] dark:text-zinc-300 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800 transition-colors"
                   href={activeProject.href}
                 >
-                  View case study
+                  {sectionCopy.viewCaseStudyLabel}
                 </a>
               </div>
             </article>
           </AnimatedSection>
 
-          <aside className="flex flex-col gap-3" aria-label="Project list">
+          <aside className="flex flex-col gap-3" aria-label={sectionCopy.projectListLabel}>
             {projects.map((project, index) => (
               <AnimatedItem key={project.title} index={index} baseDelay={80} animation="fade-left">
                 <button

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { Service } from "@/lib/site-data";
+import { useSiteContent } from "@/components/providers/site-language-provider";
 
 interface ServiceGridProps {
   services: Service[];
@@ -12,6 +13,8 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const { ui } = useSiteContent();
+  const sectionCopy = ui.serviceGrid;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -61,15 +64,13 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
           }}
         >
           <p className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-            Platform suite
+            {sectionCopy.eyebrow}
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1f2a1f] dark:text-white">
-            A modern operating stack for agriculture and rural commerce
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1f2a1f] dark:text-white break-words">
+            {sectionCopy.title}
           </h2>
           <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
-            Each module can run standalone or as part of one coordinated product
-            ecosystem. The redesign emphasizes system thinking instead of
-            isolated service tiles.
+            {sectionCopy.description}
           </p>
         </div>
 
@@ -86,7 +87,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
             }}
           >
             <span className="text-[11px] font-semibold tracking-widest uppercase text-[#4d6b2f] dark:text-indigo-400">
-              Spotlight module
+              {sectionCopy.spotlightLabel}
             </span>
             <h3 className="text-2xl font-bold text-[#1f2a1f] dark:text-white">{highlight.title}</h3>
             <p className="text-[#3d4a3d] dark:text-zinc-400 leading-relaxed">
@@ -96,7 +97,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
               href={highlight.href}
               className="text-sm font-medium text-[#1f2a1f] dark:text-white hover:underline"
             >
-              Open module &rarr;
+              {sectionCopy.openModuleLabel}
             </a>
           </article>
 
@@ -127,7 +128,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
                   href={service.href}
                   className="text-sm font-medium text-[#1f2a1f] dark:text-white hover:underline mt-auto"
                 >
-                  Details &rarr;
+                  {sectionCopy.detailsLabel}
                 </a>
               </article>
             ))}
@@ -137,7 +138,7 @@ export default function ServiceGrid({ services }: ServiceGridProps) {
         {/* Ticker with scroll-based movement */}
         <div
           className="flex gap-8 mt-16 overflow-hidden text-2xl font-bold text-[#c48738]/20 dark:text-zinc-800 whitespace-nowrap select-none"
-          aria-label="Service highlights"
+          aria-label={sectionCopy.tickerAriaLabel}
           style={{
             opacity: isInView ? 1 : 0,
             transform: `translateX(${scrollProgress * -100}px)`,

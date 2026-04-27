@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { SiteLanguageProvider } from "@/components/providers/site-language-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -65,7 +66,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="font-[var(--font-inter)] antialiased">
-        {children}
+        <SiteLanguageProvider>{children}</SiteLanguageProvider>
       </body>
     </html>
   );
