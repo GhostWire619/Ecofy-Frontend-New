@@ -8,6 +8,9 @@ interface PartnersSectionProps {
   partners: Partner[];
 }
 
+// Temporarily hidden — partner company logos are not shown for now.
+const SHOW_PARTNERS = false;
+
 export default function PartnersSection({ partners }: PartnersSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const marqueePartners = [...partners, ...partners, ...partners];
@@ -16,6 +19,10 @@ export default function PartnersSection({ partners }: PartnersSectionProps) {
     const timer = setTimeout(() => setIsVisible(true), 200);
     return () => clearTimeout(timer);
   }, []);
+
+  if (!SHOW_PARTNERS) {
+    return null;
+  }
 
   return (
     <section className="py-10 overflow-hidden">
