@@ -41,7 +41,7 @@ export default function Hero({ slides }: HeroProps) {
           </p>
           <div className="flex flex-wrap gap-4 mt-2">
             <a
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/95 text-[#141a29] rounded-xl font-medium text-center hover:bg-white transition no-underline"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/30 rounded-xl font-medium text-white text-center hover:bg-white/10 transition no-underline"
               href={first.primary.href}
             >
               {first.primary.label}
@@ -62,7 +62,7 @@ export default function Hero({ slides }: HeroProps) {
               </svg>
             </a>
             <a
-              className="inline-flex items-center justify-center px-6 py-3 border border-white/30 rounded-xl font-medium text-white text-center hover:bg-white/10 transition no-underline"
+              className="inline-flex items-center justify-center px-7 py-3 bg-white text-[#141a29] rounded-xl font-semibold text-center shadow-lg shadow-black/15 hover:bg-white/90 transition no-underline"
               href={first.secondary.href}
             >
               {first.secondary.label}

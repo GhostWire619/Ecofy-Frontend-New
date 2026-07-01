@@ -448,7 +448,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           "Ecofy helps farmers plan daily work, keep clear records, track costs, monitor crops, and know what needs attention across the farm.",
         image: "/uploads/2023/03/1-1.png",
         primary: { label: "Explore how it works", href: "/how-we-help-clients" },
-        secondary: { label: "About us", href: "/about-us" },
+        secondary: { label: "Get started", href: APP_REGISTER_URL },
       },
       {
         eyebrow: "Earn as you grow",
@@ -1061,7 +1061,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           "Ecofy huwasaidia wakulima kupanga kazi, kuweka kumbukumbu, kufuatilia gharama na mazao, na kujua jambo muhimu linalofuata shambani.",
         image: "/uploads/2023/03/1-1.png",
         primary: { label: "Ona jinsi inavyofanya kazi", href: "/how-we-help-clients" },
-        secondary: { label: "Kuhusu sisi", href: "/about-us" },
+        secondary: { label: "Anza sasa", href: APP_REGISTER_URL },
       },
       {
         eyebrow: "Hatua moja baada ya nyingine",
