@@ -221,6 +221,12 @@ export interface ProductHighlightsCopy {
   title: string;
 }
 
+export interface PainPointsCopy {
+  eyebrow: string;
+  title: string;
+  description: string;
+}
+
 export interface JoinBetaCopy {
   eyebrow: string;
 }
@@ -335,6 +341,7 @@ export interface SiteUi {
   aboutSection: AboutSectionCopy;
   pillarsSection: PillarsSectionCopy;
   appWalkthrough: AppWalkthroughCopy;
+  painPointsSection: PainPointsCopy;
   productHighlights: ProductHighlightsCopy;
   joinBeta: JoinBetaCopy;
   newsSection: NewsSectionCopy;
@@ -361,6 +368,7 @@ export interface SiteContent {
   services: Service[];
   about: About;
   pillars: Pillar[];
+  painPoints: Pillar[];
   cta: CTA;
   appScreens: AppScreen[];
   productHighlights: string[];
@@ -382,7 +390,7 @@ export interface SiteContent {
 export const APP_BASE_URL = "https://app.ecofy.co.tz";
 export const APP_LOGIN_URL = `${APP_BASE_URL}/login`;
 export const APP_REGISTER_URL = `${APP_BASE_URL}/register`;
-export const defaultSiteLocale: SiteLocale = "en";
+export const defaultSiteLocale: SiteLocale = "sw";
 
 export function isSiteLocale(value: string | null | undefined): value is SiteLocale {
   return value === "en" || value === "sw";
@@ -505,6 +513,24 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         title: "Reward",
         description:
           "Earn XP as you complete tasks, hit milestones, and build a stronger farming reputation.",
+      },
+    ],
+    painPoints: [
+      {
+        title: "Uncertain farm decisions",
+        description: "It can be hard to know what to plant, when to plant, and what the crop needs next.",
+      },
+      {
+        title: "Changing weather",
+        description: "Unexpected rain, dry spells, and heat can damage crops and waste money.",
+      },
+      {
+        title: "Missed farm work",
+        description: "Without clear reminders, important work can be forgotten or completed too late.",
+      },
+      {
+        title: "Unclear costs and selling prices",
+        description: "Farmers need a simple way to track spending and know when and where to sell.",
       },
     ],
     cta: {
@@ -846,6 +872,12 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           "Follow the farmer journey from farm setup and monitoring to operations, guidance, and market insight.",
         tabListLabel: "App screens",
       },
+      painPointsSection: {
+        eyebrow: "Problems farmers face",
+        title: "Farming should not depend on guesswork",
+        description:
+          "Ecofy brings the information and guidance a farmer needs into one simple place.",
+      },
       productHighlights: {
         eyebrow: "What's inside",
         title: "Everything a farmer needs in one app",
@@ -983,14 +1015,14 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
   },
   sw: {
     navigation: {
-      tagline: "Akili ya vitendo kwa wakulima wadogo Tanzania.",
+      tagline: "Msaada rahisi wa kilimo kwa wakulima wa Tanzania.",
       phone: "+255 749 498 117",
       phoneRaw: "+255749498117",
       name: "Ecofy Africa",
-      subtitle: "Jukwaa la Akili ya Shamba",
+      subtitle: "Msaidizi wa Mkulima",
       logo: "/ecoo full with text no boundaries logo.png",
       icon: "/ecofy icon.png",
-      cta: { label: "Fungua App", href: APP_LOGIN_URL },
+      cta: { label: "Fungua Ecofy", href: APP_LOGIN_URL },
       links: [
         { label: "Nyumbani", href: "/" },
         { label: "Kuhusu", href: "/about-us" },
@@ -1004,43 +1036,43 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           title: "Ecofy",
           href: "/how-we-help-clients",
           description:
-            "Jukwaa kamili linalounganisha Predict, Guide, na Reward kwa wakulima wadogo Tanzania.",
+            "Msaidizi mmoja wa kupanga, kufanya kazi za shamba na kufuatilia maendeleo.",
         },
         {
-          title: "Predict",
+          title: "Panga mapema",
           href: "/how-we-help-clients#predict",
           description:
-            "Utabiri wa hali ya hewa na bei za mazao unaosaidia kupanga kabla ya msimu kuanza.",
+            "Jua hali ya hewa na zao linalofaa kabla ya msimu kuanza.",
         },
         {
-          title: "Guide",
+          title: "Pata mwongozo",
           href: "/how-we-help-clients#guide",
           description:
-            "Msaidizi wa AI na mtiririko wa hatua za shamba unaosaidia maamuzi kuanzia kupanda hadi kuuza.",
+            "Pata maelekezo rahisi kutoka kupanda hadi kuvuna na kuuza.",
         },
         {
-          title: "Reward",
+          title: "Pata manufaa",
           href: "/how-we-help-clients#reward",
           description:
-            "Mfumo wa motisha unaobadili kilimo bora kuwa manufaa halisi.",
+            "Fuatilia kazi nzuri za shamba na upate nafasi ya manufaa zaidi.",
         },
       ],
     },
     heroSlides: [
       {
-        eyebrow: "Predict · Guide · Reward",
-        title: "Ondoa sintofahamu kwa wakulima wadogo Tanzania",
+        eyebrow: "Panga vizuri · Lima kwa uhakika · Pata faida",
+        title: "Lima kwa uhakika na upate faida zaidi",
         description:
-          "Ecofy humsaidia mkulima kupitia msimu mzima wa mazao, kuanzia uchaguzi wa zao hadi kazi za kila siku na maamuzi ya kuuza.",
+          "Ecofy huwasaidia wakulima wadogo wanaopata shida kujua cha kufanya shambani kwa kuwapa hali ya hewa, maelekezo na kumbukumbu sehemu moja—bila kubahatisha au kutumia mfumo mgumu.",
         image: "/uploads/2023/03/1-1.png",
         primary: { label: "Ona jinsi inavyofanya kazi", href: "/how-we-help-clients" },
         secondary: { label: "Kuhusu sisi", href: "/about-us" },
       },
       {
-        eyebrow: "Jipatie faida unapokua",
-        title: "Hatua zilizopangwa zinazogeuza kilimo bora kuwa zawadi halisi",
+        eyebrow: "Hatua moja baada ya nyingine",
+        title: "Jua kazi inayofuata shambani",
         description:
-          "Kuanzia kupanda hadi mavuno, wakulima hufuata kazi zilizoelekezwa na kupata pointi za uzoefu zinazofungua pembejeo, fedha, na masoko.",
+          "Kuanzia kupanda hadi kuvuna, Ecofy hukuonyesha kazi muhimu, hukukumbusha kwa wakati na hukusaidia kuona maendeleo yako.",
         image: "/uploads/2023/03/2.png",
         primary: { label: "Ona uwezo wa jukwaa", href: "/how-we-help-clients" },
         secondary: { label: "Mfahamu Ecofy", href: "/about-us" },
@@ -1048,68 +1080,86 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     ],
     services: [
       {
-        title: "Ecofy One",
+        title: "Huduma zote za Ecofy",
         description:
-          "Bidhaa kamili inayounganisha Predict, Guide, na Reward katika jukwaa moja kwa maamuzi bora ya shamba.",
+          "Panga msimu, fuata kazi na hifadhi kumbukumbu zako sehemu moja.",
         href: "/how-we-help-clients",
       },
       {
-        title: "Predict",
+        title: "Kupanga mapema",
         description:
           "Utabiri wa hali ya hewa na bei za mazao unamsaidia mkulima kupanga kabla ya kuwekeza kwenye msimu.",
         href: "/how-we-help-clients#predict",
       },
       {
-        title: "Guide",
+        title: "Mwongozo wa shamba",
         description:
-          "Msaidizi wa AI na mtiririko wa hatua humsaidia mkulima katika kila uamuzi kutoka kupanda hadi kuuza.",
+          "Pata maelekezo rahisi ya kila hatua kutoka kupanda hadi kuuza.",
         href: "/how-we-help-clients#guide",
       },
       {
-        title: "Reward",
+        title: "Manufaa kwa kazi nzuri",
         description:
-          "Mfumo wa motisha hubadili mbinu bora za kilimo kuwa manufaa kama pembejeo na ufadhili.",
+          "Kazi nzuri za shamba zinaweza kukupa nafasi ya pembejeo, fedha na masoko.",
         href: "/how-we-help-clients#reward",
       },
     ],
     about: {
       title: "Ecofy Africa",
       description:
-        "Ecofy ni jukwaa la kidijitali lililojengwa kuondoa sintofahamu kwenye maamuzi ya kila siku ya shamba kwa wakulima wadogo Tanzania.",
-      platformTitle: "Jukwaa la Ecofy",
+        "Ecofy ni msaidizi rahisi anayemsaidia mkulima kufanya maamuzi ya kila siku kwa uhakika.",
+      platformTitle: "Msaada wa Ecofy",
       platformDescription:
-        "Ecofy linaunganisha utabiri wa hali ya hewa, mwongozo wa shamba, ufuatiliaji wa hatua, na akili ya soko katika mtiririko mmoja.",
+        "Ecofy huweka hali ya hewa, maelekezo ya shamba, kumbukumbu na bei za sokoni sehemu moja.",
       image: "/uploads/2023/03/gerolds.png",
       href: "/about-us",
     },
     pillars: [
       {
-        title: "Predict",
+        title: "Panga",
         description:
           "Pata utabiri wa hali ya hewa na mapendekezo ya mazao kulingana na eneo, udongo, na msimu wako.",
       },
       {
-        title: "Guide",
+        title: "Ongozwa",
         description:
-          "Fuata safari ya zao iliyo na hatua za kila wiki, kazi za kila siku, na msaidizi wa AI.",
+          "Fuata maelekezo rahisi ya kila wiki na ujue kazi muhimu inayofuata.",
       },
       {
-        title: "Reward",
+        title: "Pata manufaa",
         description:
-          "Pata XP unapokamilisha kazi na hatua muhimu na ujenge sifa bora ya mkulima.",
+          "Kamilisha kazi za shamba, ona maendeleo yako na ujenge kumbukumbu nzuri ya kilimo.",
+      },
+    ],
+    painPoints: [
+      {
+        title: "Kutokujua cha kufanya",
+        description: "Ni vigumu kujua zao la kupanda, muda wa kupanda na kazi inayofuata.",
+      },
+      {
+        title: "Hali ya hewa kubadilika",
+        description: "Mvua, ukame au joto vinaweza kubadilika na kuharibu mazao.",
+      },
+      {
+        title: "Kusahau kazi muhimu",
+        description: "Kazi ya shamba ikichelewa inaweza kupunguza mavuno na kuongeza gharama.",
+      },
+      {
+        title: "Kutokujua faida",
+        description: "Bila kumbukumbu ni vigumu kujua gharama, mapato na bei nzuri ya kuuza.",
       },
     ],
     cta: {
-      title: "Anza na mtiririko wa bidhaa unaokufaa",
+      title: "Anza kusimamia shamba lako kwa urahisi",
       supportingText:
-        "Predict, Guide, na Reward hufanya kazi pamoja ili kuwasaidia wakulima kupanga vizuri, kutenda haraka, na kuuza kwa uhakika zaidi.",
+        "Ecofy hukusaidia kupanga, kufanya kazi kwa wakati na kutunza kumbukumbu ili ulime kwa uhakika zaidi.",
       href: APP_REGISTER_URL,
     },
     appScreens: [
       {
-        title: "Eneo la shamba",
+        title: "Shamba langu",
         description:
-          "Fungua eneo moja la kazi la shamba lenye hali ya hewa, ufuatiliaji, kazi, na maendeleo katika mwonekano mmoja.",
+          "Ona hali ya hewa, kazi za leo na maendeleo ya shamba lako sehemu moja.",
         image: "/uploads/2023/03/1-1.png",
       },
       {
@@ -1119,9 +1169,9 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         image: "/uploads/2023/03/corn-vs-maize-01.webp",
       },
       {
-        title: "Mazungumzo ya AI",
+        title: "Muulize msaidizi",
         description:
-          "Uliza swali lolote la kilimo na upate majibu ya haraka yanayokufaa.",
+          "Uliza swali la kilimo na upate jibu rahisi linalokufaa.",
         image: "/uploads/2023/03/corn-vs-maize-01.webp",
       },
       {
@@ -1131,19 +1181,19 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         image: "/uploads/2021/03/5.png",
       },
       {
-        title: "Akili ya soko",
+        title: "Bei za sokoni",
         description:
           "Angalia mwelekeo wa bei, linganisha maeneo, na fanya maamuzi bora ya kuuza.",
         image: "/uploads/2023/03/2.png",
       },
     ],
     productHighlights: [
-      "Ufuatiliaji wa shamba",
-      "Mwongozo wa AI",
+      "Maendeleo ya shamba",
+      "Majibu ya maswali",
       "Kumbukumbu za kazi",
-      "Hatua za kila wiki",
-      "Ishara za remote sensing",
-      "Akili ya soko",
+      "Kazi za kila wiki",
+      "Hali ya mazao",
+      "Bei za sokoni",
     ],
     projects: [
       {
@@ -1171,16 +1221,16 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         tags: ["Biashara", "Washirika", "Wanunuzi"],
       },
       {
-        title: "Studio ya Usajili wa Mkulima",
-        shortLabel: "Uandikishaji kwa kiwango",
-        category: "Uzoefu wa Huduma",
+        title: "Usajili wa Wakulima",
+        shortLabel: "Usajili wa haraka",
+        category: "Huduma kwa Wakulima",
         year: "2025",
         description:
-          "Mwelekeo wa bidhaa kwa usajili, KYC, na kujenga uaminifu kwa wakulima.",
+          "Njia rahisi ya kusajili wakulima na kuthibitisha taarifa zao.",
         image: "/uploads/2021/03/3-370x330.png",
         href: "/project/project3",
         outcome: "Safari za usajili zilizo haraka",
-        tags: ["KYC", "Usajili", "Wasifu wa Mkulima"],
+        tags: ["Uthibitisho", "Usajili", "Taarifa za Mkulima"],
       },
       {
         title: "Mtandao wa Ugani",
@@ -1220,9 +1270,9 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       },
     ],
     betaCta: {
-      title: "Fungua App ya Ecofy",
+      title: "Anza kutumia Ecofy",
       description:
-        "Ingia kama tayari una akaunti, au tengeneza akaunti yako ili uanze kusimamia mashamba, kufuatilia maeneo, na kutumia akili ya soko.",
+        "Ingia kama una akaunti, au fungua akaunti ili uanze kupanga kazi, kutunza kumbukumbu na kuona bei za sokoni.",
       buttonLabel: "Tengeneza akaunti",
       href: APP_REGISTER_URL,
     },
@@ -1239,7 +1289,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     posts: [
       {
         title: "Jinsi Ecofy inavyogeuza ishara za soko kuwa maamuzi ya kuuza",
-        category: "AgriTech",
+        category: "Teknolojia ya Kilimo",
         date: "22 Februari 2023",
         image: "/uploads/2023/02/1d-360x250.png",
         href: "/blog-left-sidebar",
@@ -1274,7 +1324,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     },
     footer: {
       kicker: "// ECOFY AFRICA",
-      statement: "Predict. Guide. Reward. — kwa kila mkulima.",
+      statement: "Panga. Lima. Pata faida. — kwa kila mkulima.",
       navigateLinks: [
         { label: "Nyumbani", href: "/" },
         { label: "Kuhusu", href: "/about-us" },
@@ -1282,7 +1332,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         { label: "Tunavyosaidia", href: "/how-we-help-clients" },
       ],
       resourceLinks: [
-        { label: "Fungua App", href: APP_LOGIN_URL },
+        { label: "Fungua Ecofy", href: APP_LOGIN_URL },
         { label: "Blogu", href: "/blog-left-sidebar" },
         { label: "Tunavyosaidia", href: "/how-we-help-clients" },
         { label: "Tengeneza Akaunti ↗", href: APP_REGISTER_URL },
@@ -1326,25 +1376,25 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     teamMembers: [
       {
         name: "Isack Madaha Lugata",
-        role: "CEO",
-        bio: "Mwanafunzi wa Sayansi ya Kompyuta na Uhandisi anayelenga machine learning, backend, na usanifu wa mifumo. Anaongoza maono ya Ecofy.",
+        role: "Kiongozi Mkuu",
+        bio: "Anaongoza maono ya Ecofy na ujenzi wa huduma rahisi zinazotatua changamoto halisi za wakulima.",
         image: "/team/CEO.jpeg",
       },
       {
         name: "Benjamin Maziku Mashimba",
-        role: "CTO",
-        bio: "Mtaalamu wa ujumuishaji wa AI na full-stack development. Anajenga na kukuza teknolojia ya Ecofy.",
+        role: "Kiongozi wa Teknolojia",
+        bio: "Anaongoza ujenzi na ukuaji wa teknolojia inayotumiwa na Ecofy.",
         image: "/team/CTO.jpg",
       },
       {
         name: "Dinales Joackim Mdollo",
-        role: "COO",
+        role: "Kiongozi wa Uendeshaji",
         bio: "Ana uzoefu katika muundo wa mitandao na ushirikiano wa wadau, akisimamia operesheni na mahusiano ya Ecofy.",
         image: "/team/COO.png",
       },
       {
         name: "Camillia Saburi Lund",
-        role: "CMO",
+        role: "Kiongozi wa Masoko",
         bio: "Anaongoza masoko na ukuaji wa jamii kwa uzoefu mkubwa wa utoaji wa ujumbe wa kidijitali na hadithi ya chapa.",
         image: "/team/CMO.jpeg",
       },
@@ -1352,10 +1402,10 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     capabilities: [
       {
         id: "predict",
-        title: "Predict",
+        title: "Panga mapema",
         tagline: "Panga mapema kwa uhakika",
         description:
-          "Predict ya Ecofy huunganisha data ya hali ya hewa ya eneo husika na utabiri wa bei za mazao ili mkulima apange kabla ya kutumia rasilimali.",
+          "Ecofy hukuonyesha hali ya hewa na makadirio ya bei ili upange kabla ya kutumia fedha na pembejeo.",
         features: [
           "Uchambuzi wa hali ya hewa kwa eneo lako mahususi",
           "Utabiri wa bei za mazao kwa kutumia data ya soko ya kihistoria na ya sasa",
@@ -1367,12 +1417,12 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       },
       {
         id: "guide",
-        title: "Guide",
+        title: "Pata mwongozo",
         tagline: "Msaada wa kitaalamu kila hatua",
         description:
-          "Guide ya Ecofy hutoa msaidizi wa AI na mtiririko wa hatua unaomsaidia mkulima katika maamuzi kuanzia kupanda hadi kuuza.",
+          "Ecofy hutoa maelekezo rahisi yanayokusaidia kuanzia kupanda hadi kuvuna na kuuza.",
         features: [
-          "Msaidizi wa AI kwa maswali na maamuzi ya kilimo kwa wakati halisi",
+          "Majibu rahisi kwa maswali yako ya kilimo",
           "Hatua zilizopangwa kutoka kupanda hadi mavuno",
           "Mwongozo wa kazi hatua kwa hatua katika kila kipindi cha ukuaji",
           "Mapendekezo ya mbinu bora kulingana na zao na mazingira",
@@ -1382,12 +1432,12 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       },
       {
         id: "reward",
-        title: "Reward",
+        title: "Pata manufaa",
         tagline: "Kilimo bora kinalipa",
         description:
-          "Reward ya Ecofy ni mfumo wa motisha unaogeuza mbinu bora za kilimo kuwa manufaa yanayoonekana.",
+          "Ecofy hutambua kazi nzuri za shamba na kukupa nafasi ya kupata manufaa.",
         features: [
-          "Pata XP kwa kukamilisha hatua na kufuata mbinu bora",
+          "Ongeza maendeleo yako kwa kukamilisha kazi na kufuata mbinu bora",
           "Fungua manufaa kama pembejeo, ufadhili, na masoko bora",
           "Fuatilia maendeleo na panda ngazi msimu mzima",
           "Ungana na wanunuzi waliothibitishwa kupitia sifa uliyoijenga",
@@ -1396,7 +1446,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         image: "/uploads/2021/03/5.png",
       },
     ],
-    blogCategories: ["AgriTech", "Akili ya Shambani", "Maboresho ya Jukwaa"],
+    blogCategories: ["Teknolojia ya Kilimo", "Maarifa ya Shambani", "Maboresho ya Ecofy"],
     ui: {
       topBar: {
         selectLanguageLabel: "Chagua lugha",
@@ -1432,22 +1482,28 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         ctaButtonLabel: "Tengeneza akaunti →",
       },
       appWalkthrough: {
-        eyebrow: "Mwongozo wa app",
-        title: "Ona jinsi Ecofy inavyofanya kazi kwenye mtiririko mzima wa shamba",
+        eyebrow: "Jinsi Ecofy inavyotumika",
+        title: "Kila unachohitaji kwa shamba lako sehemu moja",
         description:
-          "Fuata safari ya mkulima kutoka uanzishaji wa shamba na ufuatiliaji hadi kazi, mwongozo, na akili ya soko.",
-        tabListLabel: "Skrini za app",
+          "Ona hali ya hewa, kazi za kufanya, kumbukumbu, maelekezo na bei za sokoni.",
+        tabListLabel: "Sehemu za Ecofy",
+      },
+      painPointsSection: {
+        eyebrow: "Changamoto za mkulima",
+        title: "Kilimo hakipaswi kuwa cha kubahatisha",
+        description:
+          "Ecofy huweka taarifa na maelekezo muhimu sehemu moja ili ufanye maamuzi kwa urahisi.",
       },
       productHighlights: {
-        eyebrow: "Vilivyomo ndani",
-        title: "Kila kitu ambacho mkulima anahitaji katika app moja",
+        eyebrow: "Msaada unaopata",
+        title: "Vitu muhimu kwa msimu wako wa kilimo",
       },
       joinBeta: {
-        eyebrow: "Ufikiaji wa mapema",
+        eyebrow: "Anza kutumia",
       },
       newsSection: {
-        eyebrow: "Jarida",
-        title: "Maarifa ya shambani, taarifa za jukwaa, na maboresho ya mabadiliko",
+        eyebrow: "Habari na mafunzo",
+        title: "Mafunzo rahisi ya kilimo na habari za Ecofy",
         viewAllLabel: "Ona machapisho yote",
         readArticleLabel: "Soma makala",
         exploreLabel: "Chunguza",
@@ -1465,27 +1521,27 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         submitLabel: "Tuma ombi",
         supportEyebrow: "Namba ya msaada",
         supportTitle: "Unahitaji msaada wa kuanza?",
-        supportTags: ["Mwitikio wa 24/7", "Uratibu wa kikanda", "Utoaji wa haraka"],
+        supportTags: ["Msaada kila siku", "Msaada wa karibu", "Majibu ya haraka"],
       },
       blogList: {
         allCategoryLabel: "Yote",
       },
       projectsSection: {
-        eyebrow: "Mchunguzi wa visa",
-        title: "Pitia miradi kama simulizi za bidhaa zilizounganishwa",
+        eyebrow: "Kazi tulizofanya",
+        title: "Ona jinsi tunavyotatua changamoto mbalimbali",
         description:
-          "Gusa au elekeza kila kisa ili kuona matokeo, lebo, na muktadha wa kategoria.",
+          "Chagua kazi yoyote kuona changamoto, tulichofanya na matokeo yake.",
         outcomeLabel: "Matokeo",
         viewCaseStudyLabel: "Ona kisa",
         projectListLabel: "Orodha ya miradi",
       },
       serviceGrid: {
-        eyebrow: "Mfumo wa jukwaa",
-        title: "Mkusanyiko wa kisasa wa zana kwa kilimo na biashara ya vijijini",
+        eyebrow: "Huduma za Ecofy",
+        title: "Msaada rahisi kwa kilimo na biashara ya mazao",
         description:
-          "Kila moduli inaweza kufanya kazi yenyewe au kama sehemu ya mfumo mmoja unaoratibiwa.",
-        spotlightLabel: "Moduli kuu",
-        openModuleLabel: "Fungua moduli →",
+          "Unaweza kutumia huduma moja au kuziunganisha kulingana na mahitaji yako.",
+        spotlightLabel: "Huduma kuu",
+        openModuleLabel: "Fungua huduma →",
         detailsLabel: "Maelezo →",
         tickerAriaLabel: "Vivutio vya huduma",
       },
@@ -1498,10 +1554,10 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         title: "Matokeo ya uwanjani katika usajili, usambazaji, na operesheni za washirika",
       },
       advisoryTabs: {
-        eyebrow: "Studio ya ushauri",
-        title: "Pitia uwezo wa ushauri kama paneli ya bidhaa",
+        eyebrow: "Ushauri wetu",
+        title: "Ona maeneo tunayoweza kukusaidia",
         description:
-          "Badili maeneo tofauti ili kuona matokeo na mwelekeo wa utoaji kwa kila mkondo wa ushauri.",
+          "Chagua eneo ili kuona msaada tunaotoa na matokeo yanayotarajiwa.",
         tabListLabel: "Maeneo ya ushauri",
         currentFocusLabel: "Mwelekeo wa sasa",
         tags: ["Maarifa ya sekta", "Mifumo ya utekelezaji", "Ushirikiano wa utoaji"],
@@ -1528,15 +1584,15 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         howWeHelp: {
           banner: {
             eyebrow: "Tunavyosaidia",
-            title: "Predict. Guide. Reward.",
+            title: "Panga. Ongozwa. Pata manufaa.",
             subtitle:
-              "Uwezo mkuu wa jukwaa unaofanya kazi pamoja kuondoa sintofahamu na kumwezesha mkulima kuanzia kupanda hadi mavuno.",
+              "Msaada rahisi unaokuwezesha kufanya maamuzi bora kuanzia kupanda hadi kuvuna.",
             breadcrumbs: [{ label: "Nyumbani", href: "/" }, { label: "Tunavyosaidia" }],
             backgroundImage: "/uploads/2021/03/hm-2-counter-bg.jpg",
           },
           ctaTitle: "Uko tayari kuhamia kutoka kujifunza hadi kutumia Ecofy?",
           ctaDescription:
-            "Anza kwenye app ya moja kwa moja. Ingia kama tayari una akaunti, au tengeneza moja na uanze kuweka shamba lako la kwanza.",
+            "Ingia kama tayari una akaunti, au tengeneza akaunti na uweke shamba lako la kwanza.",
           signInLabel: "Ingia",
           getStartedLabel: "Anza sasa",
         },
@@ -1578,4 +1634,3 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
 export function getSiteContent(locale: SiteLocale): SiteContent {
   return siteContentByLocale[locale] ?? siteContentByLocale[defaultSiteLocale];
 }
-

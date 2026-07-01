@@ -17,7 +17,7 @@ import {
   type SiteLocale,
 } from "@/lib/site-data";
 
-const STORAGE_KEY = "site-language";
+const STORAGE_KEY = "site-language-v2";
 
 interface SiteLanguageContextValue {
   locale: SiteLocale;
@@ -93,4 +93,3 @@ export function useSiteLanguage() {
 export function useSiteContent() {
   return useSiteLanguage().content;
 }
-

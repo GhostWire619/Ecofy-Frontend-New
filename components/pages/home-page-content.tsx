@@ -9,6 +9,7 @@ import JoinBetaSection from "@/components/sections/JoinBetaSection";
 import PartnersSection from "@/components/sections/PartnersSection";
 import NewsSection from "@/components/sections/NewsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import PainPointsSection from "@/components/sections/PainPointsSection";
 
 export default function HomePageContent() {
   const {
@@ -30,6 +31,7 @@ export default function HomePageContent() {
       <div className="bg-gradient-to-b from-[#eae8e5] to-white dark:from-[#09090b] dark:to-[#09090b]">
         <PartnersSection partners={partners} />
       </div>
+      <PainPointsSection />
       <PillarsSection pillars={pillars} cta={cta} />
       <AppWalkthrough screens={appScreens} />
       <ProductHighlights highlights={productHighlights} />
@@ -39,4 +41,3 @@ export default function HomePageContent() {
     </main>
   );
 }
-

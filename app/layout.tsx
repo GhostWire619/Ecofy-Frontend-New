@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ecofy Africa | Farm Intelligence Platform",
+  title: "Ecofy Africa | Msaidizi wa Mkulima",
   description:
-    "Predict. Guide. Reward. Ecofy eliminates agricultural uncertainty for smallholder farmers in Tanzania with localized crop data, climate patterns, and market intelligence.",
+    "Ecofy huwasaidia wakulima kupanga msimu, kufuata kazi za shamba na kutunza kumbukumbu kwa urahisi.",
   keywords:
     "agriculture, farming, agritech, Tanzania, Africa, farm intelligence, market access, smallholder farmers",
   icons: {
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="sw" className={inter.variable} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
