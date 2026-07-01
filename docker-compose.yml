@@ -9,4 +9,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
+      ECOFY_API_URL: ${ECOFY_API_URL:-http://host.docker.internal:8021}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     restart: unless-stopped
