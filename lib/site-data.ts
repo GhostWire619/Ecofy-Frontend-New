@@ -443,7 +443,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     heroSlides: [
       {
         eyebrow: "Plan · Record · Track",
-        title: "Manage every farm activity with confidence",
+        title: "Manage your farm. Grow with confidence. Earn more.",
         description:
           "Ecofy helps farmers plan daily work, keep clear records, track costs, monitor crops, and know what needs attention across the farm.",
         image: "/uploads/2023/03/1-1.png",
@@ -1056,7 +1056,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     heroSlides: [
       {
         eyebrow: "Panga · Rekodi · Fuatilia",
-        title: "Simamia shughuli zote za shamba kwa urahisi",
+        title: "Simamia shamba lako. Lima kwa uhakika. Pata faida zaidi.",
         description:
           "Ecofy huwasaidia wakulima kupanga kazi, kuweka kumbukumbu, kufuatilia gharama na mazao, na kujua jambo muhimu linalofuata shambani.",
         image: "/uploads/2023/03/1-1.png",
