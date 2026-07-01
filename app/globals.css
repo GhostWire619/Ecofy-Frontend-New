@@ -117,6 +117,48 @@ body::before {
 ::-webkit-scrollbar { width: 0; display: none; }
 * { scrollbar-width: none; }
 
+@media (min-width: 1024px) {
+  html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    scrollbar-color: #4d6b2f #e7e9e3;
+    scrollbar-width: auto;
+  }
+
+  html::-webkit-scrollbar {
+    display: block;
+    width: 14px;
+  }
+
+  html::-webkit-scrollbar-track {
+    background: #e7e9e3;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    min-height: 56px;
+    border: 3px solid #e7e9e3;
+    border-radius: 999px;
+    background: #4d6b2f;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: #36501f;
+  }
+
+  .dark {
+    scrollbar-color: #879d70 #18181b;
+  }
+
+  .dark::-webkit-scrollbar-track {
+    background: #18181b;
+  }
+
+  .dark::-webkit-scrollbar-thumb {
+    border-color: #18181b;
+    background: #879d70;
+  }
+}
+
 /* ===== MARQUEE ANIMATION ===== */
 @keyframes marquee {
   0% { transform: translateX(0); }

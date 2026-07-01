@@ -399,7 +399,7 @@ export function isSiteLocale(value: string | null | undefined): value is SiteLoc
 const siteContentByLocale: Record<SiteLocale, SiteContent> = {
   en: {
     navigation: {
-      tagline: "Actionable intelligence for smallholder farmers in Tanzania.",
+      tagline: "Simple farm management for farmers in Tanzania.",
       phone: "+255 749 498 117",
       phoneRaw: "+255749498117",
       name: "Ecofy Africa",
@@ -410,9 +410,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       links: [
         { label: "Home", href: "/" },
         { label: "About Us", href: "/about-us" },
-        { label: "Our Team", href: "/our-team" },
         { label: "How We Help", href: "/how-we-help-clients" },
-        { label: "News", href: "/blog-left-sidebar" },
         { label: "Contact", href: "/contact" },
       ],
       solutions: [
@@ -420,7 +418,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           title: "Ecofy",
           href: "/how-we-help-clients",
           description:
-            "The complete platform combining Predict, Guide, and Reward for Tanzanian smallholder farmers.",
+            "A complete platform for Tanzanian farmers to plan, manage, and track farm work.",
         },
         {
           title: "Predict",
@@ -444,10 +442,10 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     },
     heroSlides: [
       {
-        eyebrow: "Predict · Guide · Reward",
-        title: "Eliminate uncertainty for smallholder farmers in Tanzania",
+        eyebrow: "Plan · Record · Track",
+        title: "Manage every farm activity with confidence",
         description:
-          "Ecofy walks farmers through the full crop season, from choosing what to plant to tracking tasks and selling harvests with more confidence.",
+          "Ecofy helps farmers plan daily work, keep clear records, track costs, monitor crops, and know what needs attention across the farm.",
         image: "/uploads/2023/03/1-1.png",
         primary: { label: "Explore how it works", href: "/how-we-help-clients" },
         secondary: { label: "About us", href: "/about-us" },
@@ -491,7 +489,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     about: {
       title: "Ecofy Africa",
       description:
-        "Ecofy is a digital platform built to remove uncertainty from everyday farm decisions for smallholder farmers in Tanzania.",
+        "Ecofy is a digital platform that helps farmers in Tanzania manage daily farm work and make confident decisions.",
       platformTitle: "Ecofy Platform",
       platformDescription:
         "Ecofy combines climate forecasting, farm guidance, milestone tracking, and market intelligence in one workflow.",
@@ -690,7 +688,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           "Why weather, operations, crop progress, and monitoring should live in one place for faster field decisions.",
       },
       {
-        title: "Why guided milestones matter for smallholder farmers",
+        title: "Why guided farm steps matter for farmers",
         category: "Platform Updates",
         date: "September 4, 2020",
         image: "/uploads/2020/09/3-360x250.png",
@@ -717,7 +715,6 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       ],
       resourceLinks: [
         { label: "Open App", href: APP_LOGIN_URL },
-        { label: "Blog", href: "/blog-left-sidebar" },
         { label: "How We Help", href: "/how-we-help-clients" },
         { label: "Create Account ↗", href: APP_REGISTER_URL },
       ],
@@ -731,14 +728,14 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     },
     aboutPage: {
       mission:
-        "To eliminate agricultural uncertainty for smallholder farmers in Tanzania by combining localized crop data, climate patterns, and market intelligence into actionable, personalized insights.",
+        "To help farmers in Tanzania manage farm activities and make confident decisions using clear, timely information.",
       story: [
-        "Ecofy Africa was founded to give Tanzanian smallholder farmers the information and tools they need to make confident decisions.",
+        "Ecofy Africa was founded to give farmers in Tanzania simple tools and information for managing their farms with confidence.",
         "We built Ecofy as a digital platform that combines localized crop data, climate patterns, and market intelligence tailored to each farmer's land and crop conditions.",
         "From planting through harvest, farmers are guided through structured milestones and tasks that improve outcomes and unlock tangible rewards.",
       ],
       vision:
-        "A Tanzania where every smallholder farmer has access to the intelligence they need to thrive.",
+        "A Tanzania where every farmer has the support needed to manage a productive and profitable farm.",
       values: [
         {
           title: "Farmer-First Design",
@@ -953,7 +950,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         about: {
           banner: {
             eyebrow: "About Us",
-            title: "Eliminating agricultural uncertainty for smallholder farmers",
+            title: "Helping farmers manage their farms with confidence",
             subtitle:
               "Ecofy combines localized crop data, climate patterns, and market intelligence into actionable, personalized insights.",
             breadcrumbs: [{ label: "Home", href: "/" }, { label: "About Us" }],
@@ -970,7 +967,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
             eyebrow: "How We Help",
             title: "Predict. Guide. Reward.",
             subtitle:
-              "Three core capabilities that work together to eliminate uncertainty and empower smallholder farmers from planting through harvest.",
+              "Three simple services that help farmers plan, work, and track progress from planting through harvest.",
             breadcrumbs: [{ label: "Home", href: "/" }, { label: "How We Help" }],
             backgroundImage: "/uploads/2021/03/hm-2-counter-bg.jpg",
           },
@@ -999,7 +996,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           },
           ctaTitle: "Join us",
           ctaDescription:
-            "We are always looking for talented people who share our mission of empowering smallholder farmers with actionable intelligence.",
+            "We are always looking for talented people who share our mission of helping farmers manage their farms and grow.",
           ctaLabel: "Get in touch",
         },
         blog: {
@@ -1026,9 +1023,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       links: [
         { label: "Nyumbani", href: "/" },
         { label: "Kuhusu", href: "/about-us" },
-        { label: "Timu", href: "/our-team" },
         { label: "Tunavyosaidia", href: "/how-we-help-clients" },
-        { label: "Habari", href: "/blog-left-sidebar" },
         { label: "Wasiliana", href: "/contact" },
       ],
       solutions: [
@@ -1060,10 +1055,10 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     },
     heroSlides: [
       {
-        eyebrow: "Panga vizuri · Lima kwa uhakika · Pata faida",
-        title: "Lima kwa uhakika na upate faida zaidi",
+        eyebrow: "Panga · Rekodi · Fuatilia",
+        title: "Simamia shughuli zote za shamba kwa urahisi",
         description:
-          "Ecofy huwasaidia wakulima wadogo wanaopata shida kujua cha kufanya shambani kwa kuwapa hali ya hewa, maelekezo na kumbukumbu sehemu moja—bila kubahatisha au kutumia mfumo mgumu.",
+          "Ecofy huwasaidia wakulima kupanga kazi, kuweka kumbukumbu, kufuatilia gharama na mazao, na kujua jambo muhimu linalofuata shambani.",
         image: "/uploads/2023/03/1-1.png",
         primary: { label: "Ona jinsi inavyofanya kazi", href: "/how-we-help-clients" },
         secondary: { label: "Kuhusu sisi", href: "/about-us" },
@@ -1306,7 +1301,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           "Kwa nini hali ya hewa, kazi, maendeleo ya zao, na ufuatiliaji vinapaswa kuonekana sehemu moja.",
       },
       {
-        title: "Kwa nini hatua zilizoongozwa ni muhimu kwa wakulima wadogo",
+        title: "Kwa nini maelekezo ya hatua kwa hatua ni muhimu kwa wakulima",
         category: "Maboresho ya Jukwaa",
         date: "4 Septemba 2020",
         image: "/uploads/2020/09/3-360x250.png",
@@ -1333,7 +1328,6 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
       ],
       resourceLinks: [
         { label: "Fungua Ecofy", href: APP_LOGIN_URL },
-        { label: "Blogu", href: "/blog-left-sidebar" },
         { label: "Tunavyosaidia", href: "/how-we-help-clients" },
         { label: "Tengeneza Akaunti ↗", href: APP_REGISTER_URL },
       ],
@@ -1347,14 +1341,14 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
     },
     aboutPage: {
       mission:
-        "Kuondoa sintofahamu ya kilimo kwa wakulima wadogo Tanzania kwa kuunganisha data ya mazao, hali ya hewa, na akili ya soko kuwa mwongozo wa vitendo.",
+        "Kuwasaidia wakulima Tanzania kusimamia shughuli za shamba na kufanya maamuzi kwa uhakika kwa kutumia taarifa rahisi na za wakati.",
       story: [
-        "Ecofy Africa ilianzishwa ili kuwapa wakulima wadogo Tanzania taarifa na zana zinazowasaidia kufanya maamuzi kwa uhakika.",
+        "Ecofy Africa ilianzishwa kuwapa wakulima Tanzania njia rahisi ya kupanga kazi, kuweka kumbukumbu na kufanya maamuzi kwa uhakika.",
         "Tulijenga Ecofy kama jukwaa la kidijitali linalounganisha data ya mazao, mifumo ya hali ya hewa, na akili ya soko kulingana na ardhi na zao la kila mkulima.",
         "Kuanzia kupanda hadi mavuno, wakulima huongozwa kupitia hatua na kazi zinazoboresha matokeo na kufungua zawadi halisi.",
       ],
       vision:
-        "Tanzania ambayo kila mkulima mdogo anaweza kupata akili anayohitaji ili kustawi.",
+        "Tanzania ambayo kila mkulima ana msaada wa kusimamia shamba lenye tija na faida.",
       values: [
         {
           title: "Muundo unaomweka mkulima mbele",
@@ -1569,7 +1563,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
         about: {
           banner: {
             eyebrow: "Kuhusu",
-            title: "Kuondoa sintofahamu ya kilimo kwa wakulima wadogo",
+            title: "Kuwasaidia wakulima kusimamia mashamba kwa uhakika",
             subtitle:
               "Ecofy linaunganisha data ya mazao, hali ya hewa, na akili ya soko kuwa mwongozo wa vitendo unaomfaa mkulima.",
             breadcrumbs: [{ label: "Nyumbani", href: "/" }, { label: "Kuhusu" }],
@@ -1615,7 +1609,7 @@ const siteContentByLocale: Record<SiteLocale, SiteContent> = {
           },
           ctaTitle: "Jiunge nasi",
           ctaDescription:
-            "Daima tunatafuta watu wenye vipaji wanaoshiriki dhamira yetu ya kuwawezesha wakulima wadogo kwa akili ya vitendo.",
+            "Daima tunatafuta watu wenye vipaji wanaoshiriki dhamira yetu ya kuwasaidia wakulima kusimamia mashamba na kukua.",
           ctaLabel: "Wasiliana nasi",
         },
         blog: {

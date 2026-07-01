@@ -7,7 +7,6 @@ import AppWalkthrough from "@/components/sections/AppWalkthrough";
 import ProductHighlights from "@/components/sections/ProductHighlights";
 import JoinBetaSection from "@/components/sections/JoinBetaSection";
 import PartnersSection from "@/components/sections/PartnersSection";
-import NewsSection from "@/components/sections/NewsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import PainPointsSection from "@/components/sections/PainPointsSection";
 
@@ -20,7 +19,6 @@ export default function HomePageContent() {
     appScreens,
     productHighlights,
     betaCta,
-    posts,
     services,
     contactDetails,
   } = useSiteContent();
@@ -36,7 +34,6 @@ export default function HomePageContent() {
       <AppWalkthrough screens={appScreens} />
       <ProductHighlights highlights={productHighlights} />
       <JoinBetaSection cta={betaCta} />
-      <NewsSection posts={posts} />
       <ContactSection services={services} contactDetails={contactDetails} />
     </main>
   );

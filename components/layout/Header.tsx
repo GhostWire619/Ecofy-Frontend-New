@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 overflow-hidden ${
+        className={`fixed top-[36px] left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "left-3 right-3 sm:left-6 sm:right-6 rounded-2xl backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 shadow-lg border border-white/30 dark:border-white/10"
             : "border border-transparent"
@@ -97,7 +97,7 @@ export default function Header() {
                 </button>
 
                 <div
-                  className={`absolute top-full right-0 mt-2 w-56 rounded-xl border border-[#1f2a1f]/10 dark:border-zinc-700/60 bg-[#ffffff] dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
+                  className={`absolute top-full right-0 mt-0 w-56 rounded-xl border border-[#1f2a1f]/10 dark:border-zinc-700/60 bg-[#ffffff] dark:bg-zinc-900 shadow-xl transition-all duration-200 ${
                     isSolutionsOpen
                       ? "opacity-100 translate-y-0 pointer-events-auto"
                       : "opacity-0 -translate-y-2 pointer-events-none"
@@ -109,6 +109,7 @@ export default function Header() {
                         key={item.title}
                         className="block px-4 py-2.5 text-[13px] leading-tight font-medium text-[#3d4a3d] dark:text-zinc-300 hover:bg-[#f0f0f0] dark:hover:bg-zinc-800/50 transition-colors no-underline"
                         href={item.href}
+                        onClick={() => setIsSolutionsOpen(false)}
                       >
                         {item.title}
                       </a>

@@ -14,7 +14,7 @@ export default function CapabilitySection({
   reversed = false,
 }: CapabilitySectionProps) {
   return (
-    <section id={capability.id} className="py-20 lg:py-28">
+    <section id={capability.id} className="scroll-mt-28 py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text side */}
